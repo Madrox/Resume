@@ -2,7 +2,6 @@ RESUME
 What started as a project to create my own resume turned into a grander
 experiment in personal data visualization.
 
-
 TODO
 - I'd like the data to be separated into JSON and the resume built
    dynamically.
@@ -10,3 +9,8 @@ TODO
 - Moar tagging
 - Feedback forms
 - Implementation of hResume isn't quite there yet
+
+
+
+
+
