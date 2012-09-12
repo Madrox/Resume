@@ -1,12 +1,22 @@
-<html>
-<head profile="http://microformats.org/profile/hresume">
+<!DOCTYPE html>
+<html lang="en">
+<!-- By: David Horn -->
+<!-- about this resume -->
+<!-- 
+    this resume was written to take advantage of HTML5, jQuery,
+        and web-based visualization.
+--> 
+<head profile="http://microformats.org/profile/hresume"> <!-- Look, mom! Microformats! -->
     <title>David Horn's Resume</title>
-    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
-    <link href="http://twitter.github.com/bootstrap/assets/css/docs.css" rel="stylesheet"> 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
-    <script src="http://twitter.github.com/bootstrap/1.3.0/bootstrap-scrollspy.js" type="text/javascript"></script>
-    <script src="http://twitter.github.com/bootstrap/1.3.0/bootstrap-dropdown.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
     <style type="text/css" media="print">
+        body {
+            width: 1000px;
+        }
         .do-not-print {
             visibility: hidden;
             display: none;
@@ -20,52 +30,77 @@
         }
         .label {
             color: #BFBFBF;
+            text-shadow: none;
             background-color: none;
         }
-        .label.success {
+        .label-success {
             color: #46A546;
             background-color: none;
         }
-        .label.warning {
+        .label-warning {
             color: #F89406;
+            text-shadow: none;
             background-color: none;
         }
-        .label.notice {
+        .label-info {
             color: #62CFFC;
             background-color: none;
         }
     </style>
-
-<!-- By: David Horn -->
-<!-- about this resume -->
-<!-- 
-	this resume was written to take advantage of HTML5, jQuery,
-		and web-based visualization.
--->	
+    <style type="text/css" media="screen">
+        .longurl {
+            overflow-x: hidden;
+        }
+        .print-only {
+            display: none;
+            visibility: hidden;
+        }
+        body {
+            padding-top: 60px !important; 
+        }
+        @media (max-width: 979px) {
+          body {
+            padding-top: 0px !important; 
+          }
+        }
+    </style>
 </head>
-<body id="bootstrap-js" style="margin-top: 40px;">
-<div class="topbar do-not-print"  data-scrollspy="scrollspy">
-    <div class="topbar-inner">
+<body data-spy="scroll" data-target=".navbar">
+<div class="navbar-fixed-top navbar do-not-print">
+    <div class="navbar-inner">
         <div class="container">
-            <h3>
-                <a href="#">David Horn</a>
-            </h3>
-            <ul class="nav">
-                <li><a href="#contact-details">Contact</a></li>
-                <li><a href="#summary">Summary</a></li>
-                <li><a href="#topics">Topics</a></li>
-                <li><a href="#communities">Communities</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-            <ul class="nav secondary-nav">
-                <li class="dropdown" data-dropdown="dropdown">
-                    <a href="#" class="dropdown-toggle">Actions</a>
+            <a class="brand" href="#">David Horn</a>
+
+            <ul class="nav pull-left">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="resume.pdf">Download .pdf</a></li>
+                        <li><a href="#contact-details">Contact</a></li>
+                        <li><a href="#summary">Summary</a></li>
+                        <li><a href="#topics">Topics I'm Exploring</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav pull-left">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Experience <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#communities">Communities</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#experience">Work Experience</a></li>
+                        <li><a href="#education">Education</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav pull-left">
+                <li><a href="#about">About This Resume</a></li>
+            </ul>
+            <ul class="nav pull-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="David-Horn-Resume.pdf">Download .pdf</a></li>
                         <li><a href="#" onclick="window.print()">Print this resume</a></li>
                         <li><a href="https://github.com/Madrox/Resume" target="_blank">View code on GitHub</a></li>
                     </ul>
@@ -74,17 +109,19 @@
         </div>
     </div>
 </div>
+
+
 <header id="contact-details">
     <div class="container vcard">
         <div class="page-header">
-            <h1><span class="fn">David Horn</span> <small>Data Scientist, Statistician, and Engineer</small></h1>
+            <h1><span class="fn">David Horn</span> <small>Engineer and Statistician. I like building things. </small></h1>
         </div>
         <div class="contact row vcard">
-            <div class="span4 lead">
-                <address class="adr"><span class="street-address">833 Americana Way<br />Suite 317</span><br /><span class="locality">Glendale</span>, <abbr  class="region" title="California">CA</abbr> <span class="postal-code">91210</span></address>
+            <div class="span3">
+                <address class="adr "><span class="street-address">833 Americana Way<br />Suite 317</span><br /><span class="locality">Glendale</span>, <abbr  class="region" title="California">CA</abbr> <span class="postal-code">91210</span></address>
             </div>
-            <div class="span4 lead">
-                <address>
+            <div class="span3">
+                <address class="">
                     <abbr title="web site">web:</abbr>
                     <a href="http://d8a.me" target="_blank" class="url">http://d8a.me</a>
                     <br />
@@ -97,13 +134,18 @@
                     <a href="mailto:david.horn@d8a.me" class="email">david.horn@d8a.me</a>
                 </address>
             </div>
-            <div class="span8 lead">
-                <ul class="media-grid">
-                    <li><a target="_blank" href="http://twitter.com/madrox"><img src="Twitter-icon.png" height="45" class="thumbnail" /></a></li>
-                    <li><a target="_blank" href="http://facebook.com/madrox"><img src="Facebook-icon.png" height="45" class="thumbnail" /></a></li>
-                    <li><a target="_blank" href="http://gplus.to/madrox"><img src="Google-Plus-icon.png" height="45" class="thumbnail" /></a></li>
-                    <li><a target="_blank" href="http://flickr.com/photos/itmightbedave"><img src="Flickr-icon.png" class="thumbnail" height="45" /></a></li>
-                    <li><a target="_blank" href="http://linkedin.com/in/davidhorn"><img src="LinkedInIcon.png" class="thumbnail" height="45" /></a></li>
+            <div class="span6">
+                <ul class="thumbnails do-not-print">
+                    <li><a target="_blank" href="http://twitter.com/madrox" class="thumbnail"><img src="Twitter-icon.png" width="45" height="45" /></a></li>
+                    <li><a target="_blank" href="http://facebook.com/madrox" class="thumbnail"><img src="Facebook-icon.png" width="45" height="45" /></a></li>
+                    <li><a target="_blank" href="http://gplus.to/madrox" class="thumbnail"><img src="Google-Plus-icon.png" width="45" height="45" /></a></li>
+                    <li><a target="_blank" href="http://flickr.com/photos/itmightbedave" class="thumbnail"><img src="Flickr-icon.png" width="45" height="45" /></a></li>
+                    <li><a target="_blank" href="http://linkedin.com/in/davidhorn" class="thumbnail"><img src="LinkedInIcon.png" width="45" height="45" /></a></li>
+                </ul>
+                <ul class="print-only" style="list-style-type: none;">
+                    <li>http://twitter.com/madrox</li>
+                    <li>http://facebook.com/madrox</li>
+                    <li>http://linkedin.com/in/davidhorn</li>
                 </ul>
             </div>
         </div>
@@ -113,14 +155,10 @@
 <article><div class="container">
     
     <section id="summary">
-        <div class="pager-header">
-            <h2>Summary</h2>
-        </div>
         <div class="row">
             <div class="span16 columns">
-                <p class="summary">I am a platform engineer and a statistician seeking positions where I can use data and technology to 
-                make companies work and think smarter. This often aligns me with business intelligence and internal tools teams,
-                but I am comfortable working with both marketing and software engineering groups.</p>
+                <p class="summary lead">I lead engineering and data teams. To me, that means I try to stay out of the way as much as possible while helping people deliver cool stuff. I've built successful groups from scratch and turned around wayward teams. Now I'm looking for new problems to solve in the bay area.
+                </p>
             </div>
         </div>
     </section>
@@ -131,10 +169,10 @@
         <div class="row">
             <div class="span16 columns">
                 <blockquote>
-                <h6>HTML5 and WebGL game programming</h6>
-                <h6>Standardization of social media metrics for engagement and influence</h6>
-                <h6>How technology can be better applied to the traditional education experience</h6>
-                <h6>How collecting and visualizing our personal information can improve our lives</h6>
+                <p>Novel uses of HTML5 and WebGL</p>
+                <p>How to efficiently run development teams</p>
+                <p>Standardization of social media metrics for engagement and influence</p>
+                <p>How collecting and visualizing our personal information can improve our lives</p>
                 </blockquote>
             </div>
         </div>
@@ -144,17 +182,21 @@
             <h2>Communities I'm involved in</h2>
         </div>
         <div class="row">
-            <div class="span-one-third" class="affiliation vcard">
-                    <h3 class="fn org">BarCamp</h3>
-                        <p>I'm a regular speaker at BarCamps in Southern California on a wide range of topics.</p>
+            <div class="span3 affiliation vcard">
+                    <h4 class="fn org">BarCamp</h4>
+                        <p>I'm a regular speaker at BarCamps in Southern California on a wide range of topics like statistics, data mining, development, and how to plan road trips.</p>
             </div>
-            <div class="span-one-third" class="affiliation vcard">
-                    <h3 class="fn org">Ignite</h3>
+            <div class="span3 affiliation vcard">
+                    <h4 class="fn org">Ignite</h4>
                     <p>I've given two lightning talks on statistics-related concepts.</p>
             </div>
-            <div class="span-one-third" class="affiliation vcard">
-                    <h3 class="fn org">preDevCamp</h3>
-                    <p>I co-organized a webOS development day for San Diego mobile developers the weekend the webOS SDK was released.</p>
+            <div class="span3 affiliation vcard">
+                    <h4 class="fn org">preDevCamp</h4>
+                    <p>I co-organized a webOS development day for San Diego mobile developers the weekend the webOS SDK was released. The aim was to introduce the SDK, excite devs to work on webOS, and connect the San Diego webOS community.</p>
+            </div>
+            <div class="span3 affiliation vcard">
+                    <h4 class="fn org">Quantified Self</h4>
+                    <p>I'm involved in trying to solve and evangelize problems around personal tracking from data entry to analysis. This resulted so far in one <a href="http://ididstuff.com" target="_blank">side project</a> and one <a href="http://www.washingtonpost.com/wp-dyn/content/article/2008/09/08/AR2008090802681.html" target="_blank">Washington Post interview</a>.</p>
             </div>
         </div>
     </section>
@@ -163,38 +205,44 @@
             <h2>What I've used lately to solve problems</h2>
         </div>
         <div class="row">
-            <div class="span4 columns">
-                <h3 style="color: #46A546">Technology</h3>
+            <div class="span3">
+                <h4 style="color: #46A546">Technology</h4>
                 <blockquote><ul class="unstyled">
                     <li class="skill" rel="tag">Python</li>
                     <li class="skill" rel="tag">SAS</li>
                     <li class="skill" rel="tag">R</li>
                     <li class="skill" rel="tag">Tableau</li>
-                    <li class="skill" rel="tag">HTML/Javascript/jQuery</li>
+                    <li class="skill" rel="tag">HTML5/Javascript</li>
+                    <li class="skill" rel="tag"><strike>PHP</strike></li>
                 </ul></blockquote>
             </div>
-            <div class="span4 columns">
-                <h3 style="color: #F89406">Frameworks & Platforms</h3>
+            <div class="span3">
+                <h4 style="color: #F89406">Frameworks & Platforms</h4>
                 <blockquote><ul class="unstyled">
                     <li class="skill" rel="tag">Django</li>
-                    <li class="skill" rel="tag">MySQL</li>
+                    <li class="skill" rel="tag">jQuery/Backbone.js</li>
+                    <li class="skill" rel="tag">MySQL & PostgreSQL</li>
                     <li class="skill" rel="tag">MongoDB</li>
-                    <li class="skill" rel="tag">CouchDB</li>
+                    <li class="skill" rel="tag">HDFS</li>
                     <li class="skill" rel="tag">OAuth</li>
                     <li class="skill" rel="tag">OpenID</li>
                 </ul></blockquote>
             </div>
-            <div class="span4 columns">
-                <h3 style="color: #62CFFC">Processes</h3>
+            <div class="span3">
+                <h4 style="color: #62CFFC">Processes & Tools</h4>
                 <blockquote><ul class="unstyled">
-                    <li><strike>Waterfall</strike></li>
+                    <li class="skill" rel="tag">Git</li>
+                    <li class="skill" rel="tag"><strike>SVN</strike></li>
                     <li class="skill" rel="tag">Agile SCRUM</li>
+                    <li class="skill" rel="tag">Lean</li>
+                    <li><strike>Waterfall</strike></li>
                 </ul></blockquote>
             </div>
-            <div class="span4 columns">
-                <h3 style="color: #BFBFBF">What I'm Learning</h3>
+            <div class="span3">
+                <h4 style="color: #BFBFBF">What I'm Learning</h4>
                 <blockquote><ul class="unstyled">
                     <li class="skill" rel="tag">The Hadoop Stack</li>
+                    <li class="skill" rel="tag">UXD Principles</li>
                     <li class="skill" rel="tag">WebGL</li>
                 </ul></blockquote>
             </div>
@@ -205,18 +253,61 @@
             <h2>Projects I've worked on that I can talk about</h2>
         </div>
         <div class="row">
-            <div class="span3 columns">
-                <h3>Voltron</h3>
+            <div class="span3">
+                <h3>Lotso</h3>
+                <p><i>Internal App</i></p>
             </div>
-            <div class="span13 columns">
-                <h6>Analytics and data-mining platform</h6>
-                    <span class="label success">Python</span>
-                    <span class="label success">Tableau</span>
-                    <span class="label warning">Django</span>
-                    <span class="label warning">MongoDB</span>
-                    <span class="label warning">MySQL/PostgreSQL</span>
-                    <span class="label notice">Agile SCRUM</span>
-                <p>Voltron is a collection of tools designed to support a large-scale analytics 
+            <div class="span9">
+                <h4>Social Query Sharing</h4>
+                <p>
+                    <span class="label label-success">Python</span>
+                    <span class="label label-warning">Django</span>
+                    <span class="label label-warning">MySQL/PostgreSQL</span>
+                    <span class="label label-info">Agile SCRUM</span>
+                </p>
+                <p>Lotso is a project spun off from the Voltron tool stack to make it easier for analysts who know how to work with
+                    SQL to share their queries with analysts. In addition, analysts can write SQL queries that allow for values such as
+                    date ranges or text to be replaced on the fly by the user running the query, making queries more flexible and reusable.
+                </p>
+                <p>Various RESTful APIs and export features made this an ideal tool for front end developers to make quick web-based dashboards
+                    as well as Excel jockies who need to refresh their spreadsheets once a day.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span3">
+                <h3>Finding Nemo</h3>
+                <p><a href="https://apps.facebook.com/findingnemoscavenger/" class="longurl" target="_blank">http://bit.ly/S9JN41</a></p>
+            </div>
+            <div class="span9">
+                <h4>Experiments with HTML5 Video</h4>
+                <p>
+                    <span class="label label-success">PHP</span>
+                    <span class="label label-success">HTML5 Video</span>
+                    <span class="label label-warning">MySQL</span>
+                    <span class="label label-info">Agile SCRUM</span>
+                </p>
+                <p>The Finding Nemo Scavenger Hunt was a promotional event for Finding Nemo 3D. Guests can see Finding Nemo characters occassionally float across the porthole and follow clues to find web pages that link back to hidden URLs within the app to unlock characters. Nemo uses HTML5 video for the porthole in supported browsers, falling back to flash when necessary.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span3">
+                <h3>Voltron</h3>
+                <p><i>Internal App</i></p>
+            </div>
+            <div class="span9">
+                <h4>Analytics and data-mining platform</h4>
+                <p>
+                    <span class="label label-success">Python</span>
+                    <span class="label label-success">Tableau</span>
+                    <span class="label label-warning">Django</span>
+                    <span class="label label-warning">MongoDB</span>
+                    <span class="label label-warning">MySQL/PostgreSQL</span>
+                    <span class="label label-info">Agile SCRUM</span>
+                </p>
+                <p>
+
+                    Voltron is a collection of tools designed to support a large-scale analytics 
                 pipeline consisting of data collection, metadata management, storage, ETL, and analysis. Since
                 the customers of an analytics suite tend to have disparate needs and technical
                 backgrounds, there are various mechanisms in place to support them: AJAX/JSONP, SQL,
@@ -225,56 +316,60 @@
             </div>
         </div>
         <div class="row">
-            <div class="span3 columns">
+            <div class="span3">
                 <h3>Engage Rank</h3>
+                <p><a href="http://engagerank.com" target="_blank">http://engagerank.com</a></p>
             </div>
-            <div class="span13 columns">
-                    <h6>Social media profile analyzer</h6>
-                    <span class="label success">Python</span>
-                    <span class="label success">R</span>
-                    <span class="label warning">Django</span>
-                    <span class="label warning">OAuth</span>
-                    <span class="label warning">MySQL</span>
+            <div class="span9">
+                    <h4>Social media profile analyzer</h4>
+                    <p><span class="label label-success">Python</span>
+                        <span class="label label-success">R</span>
+                        <span class="label label-warning">Django</span>
+                        <span class="label label-warning">OAuth</span>
+                        <span class="label label-warning">MySQL</span></p>
                     <p>
                     Engage Rank is a metric that developed as the result of researching the possibility of approximating Page Rank for a set of nodes using only localized information about the graph. This is a useful metric for social networks, where edge data changes rapidly and knowing the whole graph in real time is very difficult.</p>
             </div>
         </div>
         <div class="row">
-            <div class="span3 columns">
+            <div class="span3">
                 <h3>I Did Stuff</h3>
+                <p><a href="http://ididstuff.com" target="_blank">http://ididstuff.com</a></p>
             </div>
-            <div class="span13 columns">
-                    <h6>Personal goal tracker</h6>
-                    <span class="label success">Python</span>
-                    <span class="label warning">Django</span>
-                    <span class="label warning">CouchDB</span>
+            <div class="span9">
+                    <h4>Personal goal tracker</h4>
+                    <p><span class="label label-success">Python</span>
+                        <span class="label label-warning">Django</span>
+                        <span class="label label-warning">CouchDB</span></p>
                     <p>
-                    I Did Stuff is a productivity tracking tool with an emphasis on tracking progress on goals that do not have definitions for completion, such as "eat healthy" or "exercise."</p>
+                    I Did Stuff is a productivity tracking tool with an emphasis on tracking progress on goals that do not have definitions for completion, such as "eat healthy" or "exercise." Its flexible data model made it great for most types of data tracking, and the API made it easy to perform data entry using various methods. The application also includes simple data visualization and the ability to export your data.</p>
             </div>
         </div>
         <div class="row">
-            <div class="span3 columns">
+            <div class="span3">
                 <h3>Rangle</h3>
+                <p><i>No URL</i></p>
             </div>
-            <div class="span13 columns">
-                <h6>Platform for status management</h6>
-                    <span class="label success">Python</span>
-                    <span class="label warning">Django</span>
-                    <span class="label warning">MySQL</span>
+            <div class="span9">
+                <h4>Platform for status management</h4>
+                    <p><span class="label label-success">Python</span>
+                    <span class="label label-warning">Django</span>
+                    <span class="label label-warning">MySQL</span></p>
                     <p>
-                    Rangle is a contact and status management platform. My contribution to this mobile-focused project was to develop the JSON-based API and data model in python/django.</p>
+                    Rangle is a contact and status management platform. My contribution to this mobile-focused project was to develop the JSON-based API and data model in python/django. This project eventually pivoted into the successful <a href="http://burnerapp.com/" target="_blank">Burner</a>.</p>
             </div>
         </div>
         <div class="row">
-            <div class="span3 columns">
+            <div class="span3">
                 <h3>CWBI</h3>
+                <p><i>Internal App</i></p>
             </div>
-            <div class="span13 columns">
-                    <h6>Web-based CRM</h6>
-                    <span class="label success">C#</span>
-                    <span class="label success">VB.NET</span>
-                    <span class="label warning">MS SQL</span>
-                    <span class="label notice">Waterfall</span>
+            <div class="span9">
+                    <h4>Web-based CRM</h4>
+                    <p><span class="label label-success">C#</span>
+                        <span class="label label-success">VB.NET</span>
+                        <span class="label label-warning">MS SQL</span>
+                        <span class="label label-info">Waterfall</span></p>
                     <p>CWBI is a web-based CRM, designed to meet the need of a medium-sized technical services team given the constraints of the organization. This was written before cloud-based approaches such as SalesForce.com were considered viable.</p>
             </div>
         </div>
@@ -284,123 +379,132 @@
             <h2>Companies I've worked for</h2>
         </div>
         <div class="row experience vevent">
-            <div class="span16 columns">
-                    <h3 class="location org">Disney Interactive Media Group <small>Disney's Social Media Division</small></h3>
-            </div>
-            <div class="span5 columns">
+            <div class="span12">
+                <h3 class="location org">Disney Interactive Labs <small>Disney's Social Data & Apps Team</small></h3>
                 <div class="row">
-                    <div class="span6">
-                        <em class="title">Manager, Statistical Analysis</em>
+                    <div class="span4">
+                        <div class="row">
+                            <div class="span4">
+                                <em class="title">Sr. Manager, Analytics & Apps</em>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span4">
+                                <em><abbr class="dtstart">Jun 2009</abbr> - Sep 2009; Jun 2010 - Present</em>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span8">
+                        <p>Disney Interactive Labs is a social media data and application team within The Walt Disney Company. 
+                            It serves as a lean team that can perform application building, data mining, and analysis projects with
+                            an emphasis on social and experimentation with new technologies. Labs supports all social media platforms
+                            including Facebook, Twitter, Google+, Foursquare, Pinterest, and YouTube.</p>
+                            <p>I manage a team of six engineers and analysts. I also act as a liason
+                            to other business units within Disney to help them better understand social media
+                            performance metrics.
+                        </p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="span6">
-                        <em><abbr class="dtstart">Jun 2009</abbr> - Sep 2009; Jun 2010 - Present</em>
-                    </div>
-                </div>
-            </div>
-            <div class="span11 columns">
-                <p>I am part of a division whose mission is to be a center of excellence for social media within the
-                Walt Disney Company. It manages Disney's brand presences across social
-                media platforms like Facebook, Twitter, Google+, Foursquare, Gowalla, and YouTube. I manage the
-                analytics team, which is responsible for collecting, maintaining, and analyzing
-                the social media data related to Disney's interests. I also act as a liason
-                to other business units within Disney to help them better understand social media
-                performance metrics.
-                </p>
             </div>
         </div>
 
-
-
         <div class="row experience vevent">
-            <div class="span16 columns">
+            <div class="span12">
                 <h3 class="location org">Yahoo! <small>Membership Platform Team</small></h3>
-            </div>
-            <div class="span5 columns">
                 <div class="row">
-                    <div class="span6">
-                        <em class="title">Technical Intern</em>
+                    <div class="span4">
+                        <div class="row">
+                            <div class="span4">
+                                <em class="title">Technical Intern</em>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span4">
+                                <em><abbr class="dtstart">Jun 2008</abbr> - <abbr class="dtend">Sep 2008</abbr></em>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span8">
+                        <p>I spent the summer of 2008 interning for Yahoo's membership team, which oversees all of Yahoo!'s efforts related to identity and authorization. At the time, Yahoo! was embracing open standards such as OpenID and OAuth. I developed tools to audit their new platform that ensured they adhered to specifications.</p>
+
+                        <p>In addition, I spent spare time working with their location platform, Fire Eagle. I created their widget for the Yahoo! Mobile project. This won an intern competition for "Most Useful Widget."
+                        </p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="span6">
-                        <em><abbr class="dtstart">Jun 2008</abbr> - <abbr class="dtend">Sep 2008</abbr></em>
-                    </div>
-                </div>
-            </div>
-            <div class="span11 columns">
-                <p>I spent the summer of 2008 interning for Yahoo's membership team, which oversees all of Yahoo!'s efforts related to identity and authorization. At the time, Yahoo! was embracing open standards such as OpenID and OAuth. I developed tools to audit their new platform that ensured they adhered to specifications.</p>
-                <p>In addition, I spent spare time working with their location platform, Fire Eagle. I created their widget for the Yahoo! Mobile project. This won an intern competition for "Most Useful Widget."
-                </p>
             </div>
         </div>
 
 
         <div class="row experience vevent">
-            <div class="span16 columns">
+            <div class="span12">
                 <h3 class="location org">Total Tech</h3>
-            </div>
-            <div class="span5 columns">
                 <div class="row">
-                    <div class="span6">
-                        <em class="title">Software Architect</em>
+                    <div class="span4">
+                        <div class="row">
+                            <div class="span4">
+                                <em class="title">Software Architect</em>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span4">
+                                <em><abbr class="dtstart">Jun 2006</abbr> - <abbr class="dtend">Jun 2007</abbr></em>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span8">
+                        <p>I contracted with Total Tech to produce an application to handle deployment of software distributed environment that catered to small, distributed businesses. I designed and implemented a client-server architecture that gave a business administrator the ability to install and uninstall Total Tech-licensed software from a web interface.
+                        </p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="span6">
-                        <em><abbr class="dtstart">Jun 2006</abbr> - <abbr class="dtend">Jun 2007</abbr></em>
-                    </div>
-                </div>
-            </div>
-            <div class="span11 columns">
-                <p>I contracted with Total Tech to produce an application to handle deployment of software distributed environment that catered to small, distributed businesses. I designed and implemented a client-server architecture that gave a business administrator the ability to install and uninstall Total Tech-licensed software from a web interface.
-                </p>
             </div>
         </div>
 
+
         <div class="row experience vevent">
-            <div class="span16 columns">
+            <div class="span12">
                 <h3 class="location org">Websense <small>Enterprise Applications Group</small></h3>
-            </div>
-            <div class="span5 columns">
                 <div class="row">
-                    <div class="span6">
-                        <em class="title">Programmer/Analyst</em>
+                    <div class="span4">
+                        <div class="row">
+                            <div class="span4">
+                                <em class="title">Programmer/Analyst</em>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span4">
+                                <em><abbr class="dtstart">Jun 2002</abbr> - <abbr class="dtend">Jul 2005</abbr></em>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span8">
+                        <p>Focusing on internal tools, I built several applications to increase efficiency throughout the company. 
+                        Mainly servicing the technical services department, I conceived, designed, and implemented a replacement 
+                        to their ticketing system: CWBI. This system emphasized usability and low maintenance. This solution 
+                        was in place for five years until SaaS CRM offerings matured.
+                        </p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="span6">
-                        <em><abbr class="dtstart">Jun 2002</abbr> - <abbr class="dtend">Jul 2005</abbr></em>
-                    </div>
-                </div>
-            </div>
-            <div class="span11 columns">
-                <p>Focusing on internal tools, I built several applications to increase efficiency throughout the company. 
-                Mainly servicing the technical services department, I conceived, designed, and implemented a replacement 
-                to their ticketing system: CWBI. This system emphasized usability and low maintenance. This solution 
-                was in place for five years until SaaS CRM offerings matured.
-                </p>
             </div>
         </div>
+
     </section>
     <section id="education" class="vcalendar">
         <div class="pager-header">
             <h2>Education</h2>
         </div>
         <div class="row education vevent">
-            <div class="span7 columns">
-                <h3><span class="summary">California Polytechnic University</span> <small>B.S. in Statistics</small></h3>
+            <div class="span6">
+                <h4><span class="summary">California Polytechnic University</span> <small>B.S. in Statistics</small></h4>
                 <div class="row">
                     <div class="span7">
                         <em><abbr class="dtend" title="2010-06-01">Class of 2010</abbr></em>
                     </div>
                 </div>
             </div>
-            <div class="span9 columns">
+            <div class="span6">
                 <div class="row">
-                    <div class="span3">
-                        <h4>Favorite Topics</h4>
+                    <div class="span2">
+                        <h5>Favorite Topics</h5>
                         <blockquote>
                             <ul class="unstyled">
                                 <li>SAS</li>
@@ -409,8 +513,8 @@
                             </ul>
                         </blockquote>
                     </div>
-                    <div class="span6">
-                        <h4>Research Project</h4>
+                    <div class="span4">
+                        <h5>Research Project</h5>
                         <p>I explored various projects
                         and methods of applying
                         statistical methods on social media datasets.</p>
@@ -421,29 +525,36 @@
     </section>
     <section id="about" class="do-not-print">
         <div class="pager-header">
-            <h2>About technologies in this resume</h2>
+            <h2>About this resume</h2>
         </div>
         <div class="row">
-            <div class="span16 columns">
-                <ul class="media-grid">
-                    <a class="btn primary" href="http://twitter.github.com/bootstrap/" target="_blank" style="height: 50px; width: 50px;"><h1 style="color: white;">B</h1></a>
+            <div class="span12">
+                <blockquote>
+                    <p>This resume is a humble attempt to leverage as many open technologies as possible. 
+                                        <a href="http://www.html5rocks.com/" target="_blank">HTML5</a> tags are used to denote sections, making it more readable and friendly.
+                                        <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap </a>provides layout and typography.
+                                        This is supported by <a href="http://jquery.com/" target="_blank">jQuery</a> for manipulating the DOM.
+                                        Finally, <a href="http://microformats.org/" target="_blank">Microformat's hCard and hResume spec</a> is used throughout, allowing
+                                        microformat-supported tools to extract the relevant information from the document. If I missed any interesting technologies that could be
+                                        useful in a document of this type, drop me a line.</p>
 
-                    <li><a href="http://jquery.com/" target="_blank"><img class="thumbnail" src="jquery.png" height="50" alt="jQuery for animation and element control" /></a></li>
 
-                    <li><a href="http://www.html5rocks.com/" target="_blank">
-                        <img class="thumbnail" src="html5.png" height="50" alt="HTML5 for semantic tagging" />
-                        </a>
-                    </li>
-                    <!--
-                    <li><a href="http://mbostock.github.com/protovis/" target="_blank">
-                        <img src="protovis.png" height="50" class="thumbnail" alt="Protovis for data visualization" />
-                        </a>
-                    </li>
-                    -->
-                    <li><a href="http://microformats.org/" target="_blank">
-                        <img src="microformats.jpg" height="50" class="thumbnail" alt="Microformats for hCard and hResume markup" />
-                        </a>
-                    </li>
+                <small><cite title="Source Title">David Horn, 2012</cite></small>
+                </blockquote>
+                <ul class="thumbnails">
+                    <li><a href="http://twitter.github.com/bootstrap/" target="_blank" class="thumbnail">
+                            <img src="bootstrap-logo-128.png" height="50" width="50" />
+                    </a></li>
+                    <li><a href="http://jquery.com/" target="_blank" class="thumbnail">
+                        <img src="jquery.png" height="50" alt="jQuery for animation and element control" />
+                    </a></li>
+
+                    <li><a href="http://www.html5rocks.com/" class="thumbnail" target="_blank">
+                        <img src="html5.png" height="50" alt="HTML5 for semantic tagging" />
+                    </a></li>
+                    <li><a href="http://microformats.org/" class="thumbnail" target="_blank">
+                        <img src="microformats.jpg" height="50" alt="Microformats for hCard and hResume markup" />
+                    </a></li>
                 </ul>
             </div>
         </div>
@@ -451,10 +562,4 @@
 
 </div></article>
 </body>
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#topbar').scrollSpy();
-    $('#topbar').dropdown();
-});
-</script>
 </html>
