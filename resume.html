@@ -48,6 +48,19 @@
         }
     </style>
     <style type="text/css" media="screen">
+        .dhorn.affix {
+            background-color: #f5f5f5;
+            top: 40px;
+            width: 100%;
+            margin: 0px;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 0px 0px;
+
+
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #303030;
+        }
         .longurl {
             overflow-x: hidden;
         }
@@ -59,6 +72,9 @@
             padding-top: 60px !important; 
         }
         @media (max-width: 979px) {
+        .dhorn.affix {
+            top: 0px;
+        }
           body {
             padding-top: 0px !important; 
           }
@@ -66,11 +82,9 @@
     </style>
 </head>
 <body data-spy="scroll" data-target=".navbar">
-<div class="navbar-fixed-top navbar do-not-print">
+<div class="navbar-fixed-top navbar do-not-print navbar-inverse">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="#">David Horn</a>
-
             <ul class="nav pull-left">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary <b class="caret"></b></a>
@@ -100,7 +114,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="David-Horn-Resume.pdf">Download .pdf</a></li>
+                        <li><a href="David-Horn-resume.pdf">Download .pdf</a></li>
                         <li><a href="#" onclick="window.print()">Print this resume</a></li>
                         <li><a href="https://github.com/Madrox/Resume" target="_blank">View code on GitHub</a></li>
                     </ul>
@@ -113,17 +127,17 @@
 
 <header id="contact-details">
     <div class="container vcard">
-        <div class="page-header">
-            <h1><span class="fn">David Horn</span> <small>Engineer and Statistician. I like building things. </small></h1>
+        <div class="page-header dhorn" data-spy="affix" data-offset-top="40">
+            <h1><span class="fn">David Horn</span> <small>Engineer and Statistician. I like building things around data. </small></h1>
         </div>
         <div class="contact row vcard">
             <div class="span3">
                 <address class="adr "><span class="street-address">833 Americana Way<br />Suite 317</span><br /><span class="locality">Glendale</span>, <abbr  class="region" title="California">CA</abbr> <span class="postal-code">91210</span></address>
             </div>
-            <div class="span3">
+            <div class="span4">
                 <address class="">
                     <abbr title="web site">web:</abbr>
-                    <a href="http://d8a.me" target="_blank" class="url">http://d8a.me</a>
+                    <a href="http://resume.d8a.me/david" target="_blank" class="url">http://resume.d8a.me/david</a>
                     <br />
                     <span class="tel">
                         <abbr title="cell phone" class="type">cell:</abbr>
@@ -134,18 +148,17 @@
                     <a href="mailto:david.horn@d8a.me" class="email">david.horn@d8a.me</a>
                 </address>
             </div>
-            <div class="span6">
+            <div class="span5">
                 <ul class="thumbnails do-not-print">
                     <li><a target="_blank" href="http://twitter.com/madrox" class="thumbnail"><img src="Twitter-icon.png" width="45" height="45" /></a></li>
                     <li><a target="_blank" href="http://facebook.com/madrox" class="thumbnail"><img src="Facebook-icon.png" width="45" height="45" /></a></li>
                     <li><a target="_blank" href="http://gplus.to/madrox" class="thumbnail"><img src="Google-Plus-icon.png" width="45" height="45" /></a></li>
-                    <li><a target="_blank" href="http://flickr.com/photos/itmightbedave" class="thumbnail"><img src="Flickr-icon.png" width="45" height="45" /></a></li>
                     <li><a target="_blank" href="http://linkedin.com/in/davidhorn" class="thumbnail"><img src="LinkedInIcon.png" width="45" height="45" /></a></li>
                 </ul>
                 <ul class="print-only" style="list-style-type: none;">
-                    <li>http://twitter.com/madrox</li>
-                    <li>http://facebook.com/madrox</li>
-                    <li>http://linkedin.com/in/davidhorn</li>
+                    <li><a>http://twitter.com/madrox</a></li>
+                    <li><a>http://facebook.com/madrox</a></li>
+                    <li><a>http://linkedin.com/in/davidhorn</a></li>
                 </ul>
             </div>
         </div>
@@ -157,7 +170,7 @@
     <section id="summary">
         <div class="row">
             <div class="span16 columns">
-                <p class="summary lead">I lead engineering and data teams. To me, that means I try to stay out of the way as much as possible while helping people deliver cool stuff. I've built successful groups from scratch and turned around wayward teams. Now I'm looking for new problems to solve in the bay area.
+                <p class="summary lead">I lead the social analytics and application development teams for Disney Interactive Labs, helping The Walt Disney Company find new ways to leverage social platforms. Now I'm looking for new problems to solve in the bay area.
                 </p>
             </div>
         </div>
@@ -171,7 +184,7 @@
                 <blockquote>
                 <p>Novel uses of HTML5 and WebGL</p>
                 <p>How to efficiently run development teams</p>
-                <p>Standardization of social media metrics for engagement and influence</p>
+                <p>Standardization of social media metrics around engagement, consumption, and delivery</p>
                 <p>How collecting and visualizing our personal information can improve our lives</p>
                 </blockquote>
             </div>
@@ -187,7 +200,7 @@
                         <p>I'm a regular speaker at BarCamps in Southern California on a wide range of topics like statistics, data mining, development, and how to plan road trips.</p>
             </div>
             <div class="span3 affiliation vcard">
-                    <h4 class="fn org">Ignite</h4>
+                    <h4 class="fn org">Ignite San Diego</h4>
                     <p>I've given two lightning talks on statistics-related concepts.</p>
             </div>
             <div class="span3 affiliation vcard">
@@ -250,7 +263,7 @@
     </section>
     <section id="projects">
         <div class="pager-header">
-            <h2>Projects I've worked on that I can talk about</h2>
+            <h2>Some of the projects I've worked on</h2>
         </div>
         <div class="row">
             <div class="span3">
@@ -258,7 +271,7 @@
                 <p><i>Internal App</i></p>
             </div>
             <div class="span9">
-                <h4>Social Query Sharing</h4>
+                <h4>Query Sharing</h4>
                 <p>
                     <span class="label label-success">Python</span>
                     <span class="label label-warning">Django</span>
@@ -286,7 +299,7 @@
                     <span class="label label-warning">MySQL</span>
                     <span class="label label-info">Agile SCRUM</span>
                 </p>
-                <p>The Finding Nemo Scavenger Hunt was a promotional event for Finding Nemo 3D. Guests can see Finding Nemo characters occassionally float across the porthole and follow clues to find web pages that link back to hidden URLs within the app to unlock characters. Nemo uses HTML5 video for the porthole in supported browsers, falling back to flash when necessary.
+                <p>The Finding Nemo Scavenger Hunt Facebook application was a promotional event for Finding Nemo 3D. Guests can see Finding Nemo characters occassionally float across the porthole and follow clues to find web pages that link back to hidden URLs within the app to unlock characters. Nemo uses HTML5 video for the porthole in supported browsers, falling back to flash when necessary.
                 </p>
             </div>
         </div>
@@ -318,7 +331,7 @@
         <div class="row">
             <div class="span3">
                 <h3>Engage Rank</h3>
-                <p><a href="http://engagerank.com" target="_blank">http://engagerank.com</a></p>
+                <p><a href="http://engagerank.com" target="_blank"><strike>http://engagerank.com</strike></a></p>
             </div>
             <div class="span9">
                     <h4>Social media profile analyzer</h4>
@@ -342,7 +355,7 @@
                         <span class="label label-warning">Django</span>
                         <span class="label label-warning">CouchDB</span></p>
                     <p>
-                    I Did Stuff is a productivity tracking tool with an emphasis on tracking progress on goals that do not have definitions for completion, such as "eat healthy" or "exercise." Its flexible data model made it great for most types of data tracking, and the API made it easy to perform data entry using various methods. The application also includes simple data visualization and the ability to export your data.</p>
+                    I Did Stuff is a productivity tracking tool with an emphasis on tracking progress on goals that do not have definitions for completion, such as "eat healthy" or "exercise." Its flexible data model made it great for most types of data tracking, and the API made it easy to perform data entry using various methods. The application also includes simple visualization and the ability to export data.</p>
             </div>
         </div>
         <div class="row">
@@ -380,12 +393,12 @@
         </div>
         <div class="row experience vevent">
             <div class="span12">
-                <h3 class="location org">Disney Interactive Labs <small>Disney's Social Data & Apps Team</small></h3>
+                <h3 class="location org">Disney <small>Disney Interactive Labs</small></h3>
                 <div class="row">
                     <div class="span4">
                         <div class="row">
                             <div class="span4">
-                                <em class="title">Sr. Manager, Analytics & Apps</em>
+                                <em class="title">Sr. Manager, Analytics & Applications</em>
                             </div>
                         </div>
                         <div class="row">
@@ -395,13 +408,12 @@
                         </div>
                     </div>
                     <div class="span8">
-                        <p>Disney Interactive Labs is a social media data and application team within The Walt Disney Company. 
-                            It serves as a lean team that can perform application building, data mining, and analysis projects with
-                            an emphasis on social and experimentation with new technologies. Labs supports all social media platforms
-                            including Facebook, Twitter, Google+, Foursquare, Pinterest, and YouTube.</p>
+                        <p>Disney Interactive Labs is a lean team within The Walt Disney Company that handles application building, data mining, and analysis projects with
+                            an emphasis on social media and experimentation with new technologies. Labs supports all social media platforms
+                            including Facebook, Twitter, Google+, Foursquare, Pinterest, GetGlue, and YouTube.</p>
                             <p>I manage a team of six engineers and analysts. I also act as a liason
                             to other business units within Disney to help them better understand social media
-                            performance metrics.
+                            performance metrics. I occassionally give talks and represent Disney at conferences, such as at the <a href="http://www.disneynow.com/profile/web/index.cfm?PKwebID=0x31047566f&varPage=activity" target="_blank">Disney Analytics & Optimization Summit.</a>
                         </p>
                     </div>
                 </div>
@@ -531,10 +543,10 @@
             <div class="span12">
                 <blockquote>
                     <p>This resume is a humble attempt to leverage as many open technologies as possible. 
-                                        <a href="http://www.html5rocks.com/" target="_blank">HTML5</a> tags are used to denote sections, making it more readable and friendly.
+                                        <a href="http://www.html5rocks.com/" target="_blank">HTML5</a> tags are used to denote sections, making it more readable.
                                         <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap </a>provides layout and typography.
                                         This is supported by <a href="http://jquery.com/" target="_blank">jQuery</a> for manipulating the DOM.
-                                        Finally, <a href="http://microformats.org/" target="_blank">Microformat's hCard and hResume spec</a> is used throughout, allowing
+                                        Finally, <a href="http://microformats.org/" target="_blank">Microformat's hCard and hResume specs</a> are used throughout, allowing
                                         microformat-supported tools to extract the relevant information from the document. If I missed any interesting technologies that could be
                                         useful in a document of this type, drop me a line.</p>
 
