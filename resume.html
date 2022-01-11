@@ -1,224 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- By: David Horn -->
-<!-- about this resume -->
-<!--
+  <!-- By: David Horn -->
+  <!-- about this resume -->
+  <!--
     this resume was written to take advantage of HTML5, jQuery,
         and web-based visualization.
 -->
 
-<head profile="http://microformats.org/profile/hresume">
+  <head profile="http://microformats.org/profile/hresume">
     <!-- Look, mom! Microformats! -->
     <title>David Horn's Resume</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet"
-        media="screen">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-        crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css"
+      rel="stylesheet"
+      media="screen"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
     <style type="text/css" media="print">
-        body {
-            width: 1000px;
-        }
+      body {
+        width: 1000px;
+        font-family: apple-system, BlinkMacSystemFont, "Segoe UI Historic",
+          "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol" !important;
+      }
 
-        .do-not-print {
-            visibility: hidden;
-            display: none;
-        }
+      .do-not-print {
+        visibility: hidden;
+        display: none;
+      }
 
-        section {
-            /* page-break-inside: avoid; */
-            padding-top: 20px;
-        }
+      section {
+        /* page-break-inside: avoid; */
+        padding-top: 20px;
+      }
 
-        .contiguous {
-            page-break-inside: avoid;
-        }
+      .contiguous {
+        page-break-inside: avoid;
+      }
 
-        section.experience {
-            page-break-inside: avoid;
-        }
+      section.experience {
+        page-break-inside: avoid;
+      }
 
-        .label {
-            color: #BFBFBF;
-            text-shadow: none;
-            background-color: none;
-        }
+      .label {
+        color: #bfbfbf;
+        text-shadow: none;
+        background-color: none;
+      }
 
-        .label-success {
-            color: #46A546;
-            background-color: none;
-        }
+      .label-success {
+        color: #46a546;
+        background-color: none;
+      }
 
-        .label-warning {
-            color: #F89406;
-            text-shadow: none;
-            background-color: none;
-        }
+      .label-warning {
+        color: #f89406;
+        text-shadow: none;
+        background-color: none;
+      }
 
-        .label-info {
-            color: #62CFFC;
-            background-color: none;
-        }
+      .label-info {
+        color: #62cffc;
+        background-color: none;
+      }
     </style>
     <style type="text/css" media="screen">
+      .dhorn.affix {
+        background-color: #f5f5f5;
+        top: 40px;
+        width: 100%;
+        margin: 0px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 0px 0px;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        color: #303030;
+      }
+
+      .longurl {
+        overflow-x: hidden;
+      }
+
+      .print-only {
+        display: none;
+        visibility: hidden;
+      }
+
+      body {
+        padding-top: 60px !important;
+        font-family: apple-system, BlinkMacSystemFont, "Segoe UI Historic",
+          "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol" !important;
+      }
+
+      @media (max-width: 979px) {
         .dhorn.affix {
-            background-color: #f5f5f5;
-            top: 40px;
-            width: 100%;
-            margin: 0px;
-            box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 0px 0px;
+          top: 0px;
         }
 
         body {
-            background-color: #f5f5f5;
-            color: #303030;
+          padding-top: 0px !important;
         }
-
-        .longurl {
-            overflow-x: hidden;
-        }
-
-        .print-only {
-            display: none;
-            visibility: hidden;
-        }
-
-        body {
-            padding-top: 60px !important;
-        }
-
-        @media (max-width: 979px) {
-            .dhorn.affix {
-                top: 0px;
-            }
-
-            body {
-                padding-top: 0px !important;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body data-spy="scroll" data-target=".navbar">
+  <body data-spy="scroll" data-target=".navbar">
     <div class="navbar-fixed-top navbar do-not-print navbar-inverse">
-        <div class="navbar-inner">
-            <div class="container">
-                <ul class="nav pull-left">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#contact-details">Contact</a></li>
-                            <li><a href="#summary">Summary</a></li>
-                            <li><a href="#topics">Topics I'm Exploring</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav pull-left">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Experience <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <!-- <li><a href="#communities">Communities</a></li> -->
-                            <li><a href="#skills">Skills</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#experience">Work Experience</a></li>
-                            <li><a href="#education">Education</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav pull-left">
-                    <li><a href="#about">About This Resume</a></li>
-                </ul>
-                <ul class="nav pull-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="David-Horn-resume.pdf">Download .pdf</a></li>
-                            <li><a href="#" onclick="window.print()">Print this resume</a></li>
-                            <li><a href="https://github.com/Madrox/Resume" target="_blank">View code on GitHub</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+      <div class="navbar-inner">
+        <div class="container">
+          <ul class="nav pull-left">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                >Summary <b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="#contact-details">Contact</a></li>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#topics">Topics I'm Exploring</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav pull-left">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                >Experience <b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <!-- <li><a href="#communities">Communities</a></li> -->
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Work Experience</a></li>
+                <li><a href="#education">Education</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav pull-left">
+            <li><a href="#about">About This Resume</a></li>
+          </ul>
+          <ul class="nav pull-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                >Actions <b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="David-Horn-resume.pdf">Download .pdf</a></li>
+                <li>
+                  <a href="#" onclick="window.print()">Print this resume</a>
+                </li>
+                <li>
+                  <a href="https://github.com/Madrox/Resume" target="_blank"
+                    >View code on GitHub</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
 
-
     <header id="contact-details">
-        <div class="container vcard">
-            <div class="page-header dhorn" data-spy="affix" data-offset-top="40">
-                <h1><span class="fn">David Horn</span> <small>Engineer and Statistician. I like building things and
-                        leading teams. </small></h1>
-            </div>
-            <div class="contact row vcard">
-                <div class="span3">
-                    <address class="adr "><span class="street-address">383 King St<br />Apt 813</span><br /><span class="locality">San
-                            Francisco</span>,
-                        <abbr class="region" title="California">CA</abbr> <span class="postal-code">94158</span></address>
-                </div>
-                <div class="span4">
-                    <address class="">
-                        <abbr title="web site">web:</abbr>
-                        <a href="http://d8a.me" target="_blank" class="url">http://d8a.me</a>
-                        <br />
-                        <span class="tel">
-                            <abbr title="cell phone" class="type">cell:</abbr>
-                            <span type="value">858</span>.<span type="value">775</span>.<span type="value">3298</span>
-                        </span>
-                        <br />
-                        <abbr title="email">mail:</abbr>
-                        <a href="mailto:david.horn@d8a.me" class="email">david@d8a.me</a>
-                    </address>
-                </div>
-                <div class="span5">
-                    <ul class="thumbnails do-not-print">
-                        <li><a target="_blank" href="http://twitter.com/madrox" class="thumbnail"><i class="fa fa-twitter-square fa-3x"
-                                    aria-hidden="true"></i></a></li>
-                        <li><a target="_blank" href="http://facebook.com/madrox" class="thumbnail"><i class="fa fa-facebook-official fa-3x"
-                                    aria-hidden="true"></i></a></li>
-                        <li><a target="_blank" href="http://linkedin.com/in/davidhorn" class="thumbnail"><i class="fa fa-linkedin-square fa-3x"
-                                    aria-hidden="true"></i></a></li>
-                    </ul>
-                    <ul class="print-only" style="list-style-type: none;">
-                        <li><a>http://twitter.com/madrox</a></li>
-                        <li><a>http://facebook.com/madrox</a></li>
-                        <li><a>http://linkedin.com/in/davidhorn</a></li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container vcard">
+        <div class="page-header dhorn" data-spy="affix" data-offset-top="40">
+          <h1>
+            <span class="fn">David Horn</span>
+            <small>Engineering generalist with a product focus </small>
+          </h1>
         </div>
+        <div class="contact row vcard">
+          <div class="span3">
+            <address class="adr">
+              <span class="street-address">101 NE 30th Ave</span><br /><span
+                class="locality"
+                >Hillsboro </span
+              >,
+              <abbr class="region" title="Oregon">OR</abbr>
+              <span class="postal-code">97124</span>
+            </address>
+          </div>
+          <div class="span4">
+            <address class="">
+              <abbr title="web site">web:</abbr>
+              <a href="https://horn.gg" target="_blank" class="url"
+                >https://horn.gg</a
+              >
+              <br />
+              <span class="tel">
+                <abbr title="cell phone" class="type">cell:</abbr>
+                <span type="value">858</span>.<span type="value">775</span
+                >.<span type="value">3298</span>
+              </span>
+              <br />
+              <abbr title="email">mail:</abbr>
+              <a href="mailto:david.horn@d8a.me" class="email">david@d8a.me</a>
+            </address>
+          </div>
+          <div class="span5">
+            <ul class="thumbnails do-not-print">
+              <li>
+                <a
+                  target="_blank"
+                  href="https://twitter.com/madrox"
+                  class="thumbnail"
+                  ><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://linkedin.com/in/davidhorn"
+                  class="thumbnail"
+                  ><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+            <ul class="print-only" style="list-style-type: none">
+              <li><a>https://twitter.com/madrox</a></li>
+              <li><a>https://github.com/madrox</a></li>
+              <li><a>https://linkedin.com/in/davidhorn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </header>
 
     <article>
-        <div class="container">
-
-            <section id="summary">
-                <div class="row">
-                    <div class="span16 columns">
-                        <p class="summary lead">I am a technology leader with 10 years of experience helping
-                            The Walt Disney Company build their SVOD and AVOD platforms. Now I'm looking for new
-                            problems to solve.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section id="topics">
-                <div class="pager-header">
-                    <h2>Topics I'm exploring</h2>
-                </div>
-                <div class="row">
-                    <div class="span16 columns">
-                        <blockquote>
-                            <p>Products that serve the esports community</p>
-                            <p>How to simulate the creation of solar systems and exoplanets</p>
-                            <p>Quantified Self</p>
-                        </blockquote>
-                    </div>
-                </div>
-            </section>
-            <!-- <section id="communities">
+      <div class="container">
+        <section id="summary">
+          <div class="row">
+            <div class="span16 columns">
+              <p class="summary lead">
+                I am a technology leader with 20 years of experience building
+                products and platforms on the web, desktop, and mobile. I like
+                building things and leading teams. Now I'm looking for new
+                problems to solve.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="topics">
+          <div class="pager-header">
+            <h2>Topics I'm exploring</h2>
+          </div>
+          <div class="row">
+            <div class="span16 columns">
+              <blockquote>
+                <p>Products that serve the esports community</p>
+                <p>Procedural generation of solar systems and exoplanets</p>
+                <p>Game design of rogue-likes</p>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+        <!-- <section id="communities">
                 <div class="pager-header">
                     <h2>Communities I'm involved in</h2>
                 </div>
@@ -239,381 +287,644 @@
                     </div>
                 </div>
             </section> -->
-            <section id="skills">
-                <div class="pager-header">
-                    <h2>What I've used lately to solve problems</h2>
-                </div>
-                <div class="row">
-                    <div class="span3">
-                        <h4 style="color: #46A546">Technology</h4>
-                        <blockquote>
-                            <ul class="unstyled">
-                                <li class="skill" rel="tag">Python</li>
-                                <li class="skill" rel="tag">Objective-C</li>
-                                <li class="skill" rel="tag">Java for Android</li>
-                                <li class="skill" rel="tag">R</li>
-                                <li class="skill" rel="tag">HTML5/Javascript</li>
-                            </ul>
-                        </blockquote>
-                    </div>
-                    <div class="span3">
-                        <h4 style="color: #F89406">Frameworks &amp; Platforms</h4>
-                        <blockquote>
-                            <ul class="unstyled">
-                                <li class="skill" rel="tag">Django</li>
-                                <li class="skill" rel="tag">Angular</li>
-                                <li class="skill" rel="tag">jQuery/Backbone.js</li>
-                                <li class="skill" rel="tag">MySQL &amp; PostgreSQL</li>
-                                <li class="skill" rel="tag">Google Cloud</li>
-                                <li class="skill" rel="tag">Firebase</li>
-                                <li class="skill" rel="tag">Raspberry Pi</li>
-                                <li class="skill" rel="tag">Tensorflow</li>
-                                <li class="skill" rel="tag">Unity</li>
-                            </ul>
-                        </blockquote>
-                    </div>
-                    <div class="span3">
-                        <h4 style="color: #62CFFC">Processes &amp; Tools</h4>
-                        <blockquote>
-                            <ul class="unstyled">
-                                <li class="skill" rel="tag">Agile</li>
-                                <li class="skill" rel="tag">Git</li>
-                                <li class="skill" rel="tag">Jenkins</li>
-                                <li class="skill" rel="tag">Apteligent</li>
-                                <li class="skill" rel="tag">Jira &amp; Confluence</li>
-                            </ul>
-                        </blockquote>
-                    </div>
-                    <div class="span3">
-                        <h4 style="color: #BFBFBF">What I'm Learning</h4>
-                        <blockquote>
-                            <ul class="unstyled">
-                                <li class="skill" rel="tag">Swift</li>
-                                <li class="skill" rel="tag">Neural Networks</li>
-                            </ul>
-                        </blockquote>
-                    </div>
-                </div>
-            </section>
-            <section id="projects">
-                <div class="pager-header">
-                    <h2>Some of the projects I've worked on</h2>
-                </div>
-                <div class="row contiguous">
-                    <div class="span3">
-                        <h3>DisneyLife</h3>
-                        <p><a href="https://disneylife.com" class="longurl" target="_blank">https://disneylife.com</a></p>
-                    </div>
-                    <div class="span9">
-                        <h4>"The magic of Disney all in one place"</h4>
-                        <p>
-                            <span class="label label-success">Python</span>
-                            <span class="label label-success">Objective-C</span>
-                            <span class="label label-success">Java for Android</span>
-                            <span class="label label-success">HTML5/Javascript</span>
-                            <span class="label label-warning">Django</span>
-                            <span class="label label-warning">MySQL</span>
-                            <span class="label label-warning">Google App Engine</span>
-                            <span class="label label-warning">Google Datastore</span>
-                            <span class="label label-info">Jenkins</span>
-                            <span class="label label-info">Apteligent</span>
-                        </p>
-                        <p>
-                            DisneyLife is Disney's SVOD service, offering access to Disney movies, shows, music, and
-                            books. It supports the web, iOS,
-                            tvOS, Android, Android TV, Kindle Fire, Fire TV, and Chromecast. It is available in the UK,
-                            Ireland, and Philippines.
+        <section id="skills">
+          <div class="pager-header">
+            <h2>What I've used lately to solve problems</h2>
+          </div>
+          <div class="row">
+            <div class="span3">
+              <h4 style="color: #46a546">Technology</h4>
+              <blockquote>
+                <ul class="unstyled">
+                  <li class="skill" rel="tag">Python</li>
+                  <li class="skill" rel="tag">Objective-C</li>
+                  <li class="skill" rel="tag">Typescript + React</li>
+                  <li class="skill" rel="tag">Tesseract</li>
+                  <li class="skill" rel="tag">FFmpeg</li>
+                </ul>
+              </blockquote>
+            </div>
+            <div class="span3">
+              <h4 style="color: #f89406">Frameworks &amp; Platforms</h4>
+              <blockquote>
+                <ul class="unstyled">
+                  <li class="skill" rel="tag">Django</li>
+                  <li class="skill" rel="tag">Google Cloud</li>
+                  <li class="skill" rel="tag">AWS</li>
+                  <li class="skill" rel="tag">Firebase</li>
+                </ul>
+              </blockquote>
+            </div>
+            <div class="span3">
+              <h4 style="color: #62cffc">Processes &amp; Tools</h4>
+              <blockquote>
+                <ul class="unstyled">
+                  <li class="skill" rel="tag">Agile</li>
+                  <li class="skill" rel="tag">Git</li>
+                  <li class="skill" rel="tag">Jenkins</li>
+                  <li class="skill" rel="tag">Firebase Analytics</li>
+                  <li class="skill" rel="tag">Jira &amp; Confluence</li>
+                </ul>
+              </blockquote>
+            </div>
+            <div class="span3">
+              <h4 style="color: #bfbfbf">What I'm Learning</h4>
+              <blockquote>
+                <ul class="unstyled">
+                  <li class="skill" rel="tag">Tensorflow</li>
+                  <li class="skill" rel="tag">GANs</li>
+                </ul>
+              </blockquote>
+            </div>
+          </div>
+        </section>
 
-                        </p>
-                        <p>
-                            I am the technology leader for the product since its inception in 2013. The team started
-                            with 8 engineers and is now at 38.
-                            I also serve as the product leader for a/b testing and personalization.
-                        </p>
+        <section id="projects">
+          <div class="pager-header">
+            <h2>Some of the projects I've worked on</h2>
+          </div>
+
+          <div class="row contiguous">
+            <div class="span3">
+              <h3>Trophy</h3>
+              <p>
+                <a href="https://trophy.gg" target="_blank">
+                  https://trophy.gg
+                </a>
+              </p>
+            </div>
+            <div class="span9">
+              <h4>Esports social media</h4>
+              <p>
+                <span class="label label-success">Python</span>
+                <span class="label label-success">R</span>
+                <span class="label label-success">Typescript + React</span>
+                <span class="label label-warning">Django</span>
+                <span class="label label-warning">Firebase</span>
+                <span class="label label-warning">ffmpeg</span>
+                <span class="label label-warning">Tesseract OCR</span>
+                <span class="label label-warning">Google App Engine</span>
+                <span class="label label-warning">Google Datastore</span>
+                <span class="label label-warning">MySQL</span>
+              </p>
+              <p>
+                Trophy is a social media network for sharing your gameplay
+                achievements, including clips and stats. A desktop app records
+                gameplay, analyzing it for clips and stats that the player can
+                see when they've finished their gaming session and share with
+                friends.
+              </p>
+              <p>
+                The web site is served on Firebase with React, which is powered
+                by a REST API written in Django and hosted in Google App Engine.
+                The desktop app is built with Electron and React with support
+                from ffmpeg and tesseract. I developed the backend, website, and
+                desktop app.
+              </p>
+            </div>
+          </div>
+
+          <div class="row contiguous">
+            <div class="span3">
+              <h3>Creator Dashboard</h3>
+              <p>
+                <a href="https://dashboard.twitch.tv" target="_blank">
+                  https://dashboard.twitch.tv
+                </a>
+              </p>
+            </div>
+            <div class="span9">
+              <h4>The creator site for Twitch</h4>
+              <p>
+                <span class="label label-success">Go</span>
+                <span class="label label-success">Typescript + React</span>
+                <span class="label label-warning">AWS</span>
+              </p>
+              <p>
+                The Creator Dashboard is Twitch's portal for people who stream
+                on their platform. Before this existed, creators used mostly
+                third party tools that used Twitch's APIs while live. It was
+                completed in 8 months, and launched in beta during the keynote
+                at TwitchCon.
+              </p>
+              <p>
+                I was DRI for the project from its inception, owning
+                engineering, project management, and stakeholder communication.
+                I also delivered several features when time allowed, including
+                the Stream Manager stats bar.
+              </p>
+            </div>
+          </div>
+
+          <div class="row contiguous">
+            <div class="span3">
+              <h3>DisneyLife</h3>
+              <p>
+                <a href="https://disneyplus.com" class="longurl" target="_blank"
+                  >https://disneyplus.com</a
+                >
+              </p>
+            </div>
+            <div class="span9">
+              <h4>The Disney+ test market product</h4>
+              <p>
+                <span class="label label-success">Python</span>
+                <span class="label label-success">Objective-C</span>
+                <span class="label label-success">Java for Android</span>
+                <span class="label label-success">HTML5/Javascript</span>
+                <span class="label label-warning">Django</span>
+                <span class="label label-warning">MySQL</span>
+                <span class="label label-warning">Google App Engine</span>
+                <span class="label label-warning">Google Datastore</span>
+                <span class="label label-info">Jenkins</span>
+                <span class="label label-info">Apteligent</span>
+              </p>
+              <p>
+                DisneyLife was the test market product released before Disney+,
+                Disney's SVOD service. In addition to SVOD, it offered access to
+                Disney music, books, and live streams of Disney TV channels. It
+                supported the web, iOS, tvOS, Android, Android TV, Kindle Fire,
+                Fire TV, and Chromecast. It was available in the UK, Ireland,
+                and Philippines prior to the launch of Disney+ in those markets.
+              </p>
+              <p>
+                I was the technology leader for the product since its inception
+                in 2013 until my departure. The team started with 8 engineers
+                and ended at 38. I also served as the product leader for a/b
+                testing and personalization.
+              </p>
+            </div>
+          </div>
+          <div class="row contiguous">
+            <div class="span3">
+              <h3>Morse Taps</h3>
+              <p>
+                <i>End of Life</i>
+              </p>
+            </div>
+            <div class="span9">
+              <h4>Learn morse code</h4>
+              <p>
+                <span class="label label-success">Objective-C</span>
+                <span class="label label-warning">Firebase</span>
+              </p>
+              <p>
+                Morse Taps is a side project developed to gain more hands-on
+                experience with Apple's app store and mobile app marketing. It
+                uses the Firebase stack for analytics and funnel management.
+              </p>
+              <p>
+                I designed and built the app in objective-c with sections of
+                native C for audio performance, since exact timing is critical
+                for morse signals.
+              </p>
+            </div>
+          </div>
+          <div class="row contiguous">
+            <div class="span3">
+              <h3>Voltron</h3>
+              <p><i>Internal App</i></p>
+            </div>
+            <div class="span9">
+              <h4>Analytics and data-mining platform</h4>
+              <p>
+                <span class="label label-success">Python</span>
+                <span class="label label-success">Tableau</span>
+                <span class="label label-warning">Django</span>
+                <span class="label label-warning">MongoDB</span>
+                <span class="label label-warning">MySQL/PostgreSQL</span>
+                <span class="label label-info">Agile SCRUM</span>
+              </p>
+              <p>
+                Voltron is a collection of tools designed to support a
+                large-scale analytics pipeline consisting of data collection,
+                metadata management, storage, ETL, and analysis. Since the
+                customers of an analytics suite tend to have disparate needs and
+                technical backgrounds, there are various mechanisms in place to
+                support them: AJAX/JSONP, SQL, and Python. Since its release, it
+                has taken a life of its own, supporting web-based dashboard
+                projects, Tableau reports, and Excel-driven reporting.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="vcalendar">
+          <div class="pager-header">
+            <h2>Companies I've worked for</h2>
+          </div>
+
+          <div class="row experience vevent contiguous">
+            <div class="span12">
+              <h3 class="location org">Trophy Interactive</h3>
+              <div class="row">
+                <div class="span4">
+                  <div class="row">
+                    <div class="span4">
+                      <em class="title">Cofounder and CEO</em>
                     </div>
+                  </div>
+                  <div class="row">
+                    <div class="span4">
+                      <em><abbr class="dtstart">Apr 2020</abbr> - present</em>
+                    </div>
+                  </div>
                 </div>
-                <div class="row contiguous">
-                    <div class="span3">
-                        <h3>Trophy</h3>
-                        <p>
-                            <a href="https://trophy.gg" target="_blank">
-                                https://trophy.gg
-                            </a> (Not Yet Released)
-                        </p>
-                    </div>
-                    <div class="span9">
-                        <h4>Esports social media</h4>
-                        <p><span class="label label-success">Python</span>
-                            <span class="label label-success">R</span>
-                            <span class="label label-success">HTML5/Javascript</span>
-                            <span class="label label-warning">Angular</span>
-                            <span class="label label-warning">Django</span>
-                            <span class="label label-warning">Firebase</span>
-                            <span class="label label-warning">Google App Engine</span>
-                            <span class="label label-warning">Google Datastore</span>
-                            <span class="label label-warning">MySQL</span></p>
-                        <p>
-                            Trophy is a social media network designed for the esports fan. It offers news aggregation,
-                            commenting, and esports fantasy leagues. The web site is served on Firebase, which is
-                            powered by a REST API written in Django and hosted in Google App Engine. The mobile app is
-                            written in Objective-C.
-                        </p>
-                        <p>
-                            I developed the backend and website, partnering with a mobile developer for the iOS app.
-                        </p>
-                    </div>
+                <div class="span8">
+                  <p>
+                    During quarantine, I chose to cofound a startup focused on
+                    making it easier to become a fan of esports. I served as
+                    CEO, head of product, and full stack engineer. During this
+                    time, we built a web and desktop product that went through
+                    four major iterations, applying lean startup methodologies
+                    before arriving at its current concept.
+                  </p>
                 </div>
-                <div class="row contiguous">
-                    <div class="span3">
-                        <h3>Morse Taps</h3>
-                        <p><a href="https://itunes.apple.com/us/app/morse-taps/id1071713759?mt=8" class="longurl"
-                                target="_blank">https://apple.co/2FhmFFX</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row experience vevent contiguous">
+            <div class="span12">
+              <h3 class="location org">Amazon <small>Twitch</small></h3>
+              <div class="row">
+                <div class="span4">
+                  <div class="row">
+                    <div class="span4">
+                      <em class="title">Senior Manager, Engineering</em>
                     </div>
-                    <div class="span9">
-                        <h4>Learn morse code</h4>
-                        <p>
-                            <span class="label label-success">Objective-C</span>
-                            <span class="label label-warning">Firebase</span>
-                        </p>
-                        <p>
-                            Morse Taps is a side project developed to gain more hands-on experience with Apple's app
-                            store and mobile app marketing. It uses the Firebase stack for analytics and funnel
-                            management.
-                        </p>
-                        <p>
-                            I designed and built the app in objective-c with sections of native C for audio
-                            performance, since exact timing is critical for morse signals.
-                        </p>
+                  </div>
+                  <div class="row">
+                    <div class="span4">
+                      <em
+                        ><abbr class="dtstart">Feb 2019</abbr> -
+                        <abbr class="dtend">Apr 2020</abbr></em
+                      >
                     </div>
+                  </div>
                 </div>
-                <div class="row contiguous">
-                    <div class="span3">
-                        <h3>Voltron</h3>
-                        <p><i>Internal App</i></p>
-                    </div>
-                    <div class="span9">
-                        <h4>Analytics and data-mining platform</h4>
-                        <p>
-                            <span class="label label-success">Python</span>
-                            <span class="label label-success">Tableau</span>
-                            <span class="label label-warning">Django</span>
-                            <span class="label label-warning">MongoDB</span>
-                            <span class="label label-warning">MySQL/PostgreSQL</span>
-                            <span class="label label-info">Agile SCRUM</span>
-                        </p>
-                        <p>
-                            Voltron is a collection of tools designed to support a large-scale analytics pipeline
-                            consisting of data collection, metadata management, storage, ETL, and analysis. Since the
-                            customers of an analytics suite tend to have disparate needs and technical backgrounds,
-                            there are various mechanisms in place to support them: AJAX/JSONP, SQL, and Python. Since
-                            its release, it has taken a life of its own, supporting web-based dashboard projects,
-                            Tableau reports, and Excel-driven reporting.
-                        </p>
-                    </div>
+                <div class="span8">
+                  <p>
+                    The Creator Business team was responsible for building and
+                    maintaining the tools and services streamers used while live
+                    on Twitch. I was responsible for engineering, technical
+                    product, and project management of this team.
+                  </p>
+                  <p>
+                    During my tenure, the team was responsible for 13 services
+                    in live operations, and launched a high profile project for
+                    Twitch, the creator dashboard, on time for TwitchCon within
+                    eight months of its greenlighting.
+                  </p>
                 </div>
-            </section>
-            <section id="experience" class="vcalendar">
-                <div class="pager-header">
-                    <h2>Companies I've worked for</h2>
-                </div>
-                <div class="row experience vevent">
-                    <div class="span12">
-                        <h3 class="location org">Disney <small>DCPI</small></h3>
-                        <div class="row">
-                            <div class="span4">
-                                <div class="row">
-                                    <div class="span4">
-                                        <em class="title">Director, Engineering</em>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="span4">
-                                        <em><abbr class="dtstart">Aug 2010</abbr> - Present</em>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="span8">
-                                <p>In early 2017, I took on leadership for the entire portfolio of media apps at DCPI,
-                                    including Star Wars, Disney LOL, Disney GIF, Disney Story Central, and DisneyLife.
-                                    Before then, I served as head of engineering for Disney Interactive Labs, a lean
-                                    team within The Walt Disney Company that incubates new products and technologies.
-                                    In that position, I led the team that incubated Mickey Video and DisneyLife.
-                                </p>
-                                <p>I began with 3 engineers in Los Angeles. I now manage a team of 60 in four cities,
-                                    participate in the patent committee, and sit on the technology steering committee
-                                    at DCPI. I also occassionally give talks and represent Disney at conferences.
-                                </p>
-                            </div>
-                        </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row experience vevent contiguous">
+            <div class="span12">
+              <h3 class="location org">Disney <small>DCPI</small></h3>
+              <div class="row">
+                <div class="span4">
+                  <div class="row">
+                    <div class="span4">
+                      <em class="title">Director, Engineering</em>
                     </div>
+                  </div>
+                  <div class="row">
+                    <div class="span4">
+                      <em
+                        ><abbr class="dtstart">Aug 2010</abbr> -
+                        <abbr class="dtend">Jan 2019</abbr></em
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="span8">
+                  <p>
+                    I was the technology leader for Disney Interactive Labs,
+                    reporting directly to the single thread leader of Labs. I
+                    was responsible for all engineering of new business
+                    incubation at Disney Interactive. In this position, I led
+                    the team that launched Mickey Video and DisneyLife. In early
+                    2017, I expanded into leadership for the entire portfolio of
+                    media apps at DCPI, including Star Wars, Disney LOL, Disney
+                    GIF, and Disney Story Central.
+                  </p>
+                  <p>
+                    I built this engineering organization from scratch,
+                    beginning with 3 engineers in Los Angeles. On my departure,
+                    I managed a team of 46 in four cities, participated in the
+                    patent committee, and sat on the technology steering
+                    committee at DCPI. I was also a regular invited speaker on
+                    various technology and engineering leadership topics,
+                    representing Disney at conferences.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row experience vevent contiguous">
+            <div class="span12">
+              <h3 class="location org">
+                Yahoo! <small>Membership Platform Team</small>
+              </h3>
+              <div class="row">
+                <div class="span4">
+                  <div class="row">
+                    <div class="span4">
+                      <em class="title">Technical Intern</em>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="span4">
+                      <em
+                        ><abbr class="dtstart">Jun 2008</abbr> -
+                        <abbr class="dtend">Sep 2008</abbr></em
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="span8">
+                  <p>
+                    In the middle of my statistics degree I spent the summer of
+                    2008 interning for Yahoo's membership team. At the time,
+                    Yahoo! was embracing open standards such as OpenID and
+                    OAuth, which I helped execute.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row experience vevent contiguous">
+            <div class="span12">
+              <h3 class="location org">Total Tech</h3>
+              <div class="row">
+                <div class="span4">
+                  <div class="row">
+                    <div class="span4">
+                      <em class="title">Software Architect</em>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="span4">
+                      <em
+                        ><abbr class="dtstart">Jun 2006</abbr> -
+                        <abbr class="dtend">Jun 2007</abbr></em
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="span8">
+                  <p>
+                    I contracted with Total Tech to develop an application to
+                    handle deployment of software for businesses with small
+                    distributed environments such as Habitat for Humanity. I
+                    designed and implemented a client-server architecture that
+                    gave a business administrator the ability to install and
+                    uninstall Total Tech-licensed software from a web interface.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row experience vevent contiguous">
+            <div class="span12">
+              <h3 class="location org">
+                Websense <small>Enterprise Applications Group</small>
+              </h3>
+              <div class="row">
+                <div class="span4">
+                  <div class="row">
+                    <div class="span4">
+                      <em class="title">Programmer/Analyst</em>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="span4">
+                      <em
+                        ><abbr class="dtstart">Jun 2002</abbr> -
+                        <abbr class="dtend">Jul 2005</abbr></em
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="span8">
+                  <p>
+                    Focusing on internal tools, I built several applications to
+                    increase efficiency throughout the company. Mainly servicing
+                    the technical services department, I conceived, designed,
+                    and implemented a replacement to their ticketing system:
+                    CWBI. This system emphasized usability and low maintenance.
+                    This solution was in place for five years until SaaS CRM
+                    offerings matured.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="patents" class="vcalendar">
+          <div class="pager-header">
+            <h2>Patents</h2>
+          </div>
+          <div class="row contiguous patent vevent">
+            <div class="span12">
+              <h4>
+                Content Promotion Through Automated Curation of Content Clips
+              </h4>
+              <div class="row">
+                <div class="span4">
+                  <p>
+                    US Patent
+                    <a
+                      href="https://patents.justia.com/patent/20200288185"
+                      class="longurl"
+                      target="_blank"
+                      >10911803</a
+                    >
+                  </p>
                 </div>
 
-                <div class="row experience vevent">
-                    <div class="span12">
-                        <h3 class="location org">Yahoo! <small>Membership Platform Team</small></h3>
-                        <div class="row">
-                            <div class="span4">
-                                <div class="row">
-                                    <div class="span4">
-                                        <em class="title">Technical Intern</em>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="span4">
-                                        <em><abbr class="dtstart">Jun 2008</abbr> - <abbr class="dtend">Sep 2008</abbr></em>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="span8">
-                                <p>In the middle of my statistics degree I spent the summer of 2008 interning for
-                                    Yahoo's membership
-                                    team. At the time, Yahoo! was embracing open standards such as OpenID and OAuth,
-                                    which
-                                    I helped execute.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="span4">
+                  <p>Issued <abbr class="dtstart dtend">Apr 16, 2020</abbr></p>
                 </div>
 
+                <div class="span4">
+                  <p>Inventors: David Horn, Michael McNabb, Jason G. Fong</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                <div class="row experience vevent">
-                    <div class="span12">
-                        <h3 class="location org">Total Tech</h3>
-                        <div class="row">
-                            <div class="span4">
-                                <div class="row">
-                                    <div class="span4">
-                                        <em class="title">Software Architect</em>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="span4">
-                                        <em><abbr class="dtstart">Jun 2006</abbr> - <abbr class="dtend">Jun 2007</abbr></em>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="span8">
-                                <p>I contracted with Total Tech to develop an application to handle deployment of
-                                    software for
-                                    businesses with small distributed environments such as Habitat for Humanity. I
-                                    designed
-                                    and implemented a client-server architecture that gave a business administrator the
-                                    ability
-                                    to install and uninstall Total Tech-licensed software from a web interface.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+          <div class="row contiguous patent vevent">
+            <div class="span12">
+              <h4>Automated Conversion of Vocabulary and Narrative Tone</h4>
+              <div class="row">
+                <div class="span4">
+                  <p>
+                    US Patent
+                    <a
+                      href="https://patents.justia.com/patent/20200110807"
+                      class="longurl"
+                      target="_blank"
+                      >10810382</a
+                    >
+                  </p>
                 </div>
 
-
-                <div class="row experience vevent">
-                    <div class="span12">
-                        <h3 class="location org">Websense <small>Enterprise Applications Group</small></h3>
-                        <div class="row">
-                            <div class="span4">
-                                <div class="row">
-                                    <div class="span4">
-                                        <em class="title">Programmer/Analyst</em>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="span4">
-                                        <em><abbr class="dtstart">Jun 2002</abbr> - <abbr class="dtend">Jul 2005</abbr></em>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="span8">
-                                <p>Focusing on internal tools, I built several applications to increase efficiency
-                                    throughout the company. Mainly servicing the technical services department, I
-                                    conceived, designed, and implemented a replacement to their ticketing system: CWBI.
-                                    This system emphasized usability and low maintenance. This solution was in place
-                                    for five years until SaaS CRM offerings matured.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="span4">
+                  <p>Issued <abbr class="dtstart dtend">Oct 20, 2020</abbr></p>
                 </div>
 
-            </section>
-            <section id="education" class="vcalendar">
-                <div class="pager-header">
-                    <h2>Education</h2>
+                <div class="span4">
+                  <p>Inventor: David Horn</p>
                 </div>
-                <div class="row education vevent">
-                    <div class="span6">
-                        <h4><span class="summary">California Polytechnic University</span> <small>B.S. in Statistics</small></h4>
-                        <div class="row">
-                            <div class="span7">
-                                <em><abbr class="dtend" title="2010-06-01">Class of 2010</abbr></em>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span6">
-                        <div class="row">
-                            <div class="span2">
-                                <h5>Favorite Topics</h5>
-                                <blockquote>
-                                    <ul class="unstyled">
-                                        <li>SAS</li>
-                                        <li>Graph Theory</li>
-                                        <li>Visualization</li>
-                                    </ul>
-                                </blockquote>
-                            </div>
-                            <div class="span4">
-                                <h5>Research Project</h5>
-                                <p>I explored various projects and methods of applying statistical methods on social
-                                    media datasets. My senior thesis described how to approximate PageRank using imperfect
-                                    knowledge of the graph.</p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="education" class="vcalendar">
+          <div class="pager-header">
+            <h2>Education</h2>
+          </div>
+          <div class="row education vevent">
+            <div class="span6">
+              <h4>
+                <span class="summary">California Polytechnic University</span>
+                <small>B.S. in Statistics</small>
+              </h4>
+              <div class="row">
+                <div class="span7">
+                  <em
+                    ><abbr class="dtend" title="2010-06-01"
+                      >Class of 2010</abbr
+                    ></em
+                  >
                 </div>
-            </section>
-            <footer>
-                <section id="about" class="do-not-print">
-                    <div class="pager-header">
-                        <h2>About this resume</h2>
-                    </div>
-                    <div class="row">
-                        <div class="span12">
-                            <blockquote>
-                                <p>This resume was written using <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter
-                                        Bootstrap</a> for layout and typography, <a href="http://jquery.com/" target="_blank">jQuery</a>
-                                    for
-                                    manipulating the DOM, and <a href="http://microformats.org/" target="_blank">Microformat's
-                                        hCard and hResume specs</a> to allow microformat-supported tools to extract the
-                                    relevant information from the document.
-                                    If I missed any interesting technologies that could be useful in a document of this
-                                    type,
-                                    drop me a line.</p>
+              </div>
+            </div>
+            <div class="span6">
+              <div class="row">
+                <div class="span2">
+                  <h5>Favorite Topics</h5>
+                  <blockquote>
+                    <ul class="unstyled">
+                      <li>SAS</li>
+                      <li>Graph Theory</li>
+                      <li>Visualization</li>
+                    </ul>
+                  </blockquote>
+                </div>
+                <div class="span4">
+                  <h5>Research Project</h5>
+                  <p>
+                    I explored various projects and methods of applying
+                    statistical methods on social media datasets. My senior
+                    thesis described how to approximate PageRank using imperfect
+                    knowledge of the graph.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer>
+          <section id="about" class="do-not-print">
+            <div class="pager-header">
+              <h2>About this resume</h2>
+            </div>
+            <div class="row">
+              <div class="span12">
+                <blockquote>
+                  <p>
+                    This resume was written using
+                    <a
+                      href="http://twitter.github.com/bootstrap/"
+                      target="_blank"
+                      >Twitter Bootstrap
+                    </a>
+                    for layout and typography,
+                    <a href="http://jquery.com/" target="_blank">jQuery</a> for
+                    manipulating the DOM, and
+                    <a href="http://microformats.org/" target="_blank"
+                      >Microformat's hCard and hResume specs</a
+                    >
+                    to allow microformat-supported tools to extract the relevant
+                    information from the document. If I missed any interesting
+                    technologies that could be useful in a document of this
+                    type, drop me a line.
+                  </p>
 
+                  <small
+                    ><cite title="Source Title">David Horn, 2017</cite></small
+                  >
+                </blockquote>
+                <ul class="thumbnails">
+                  <li>
+                    <a
+                      href="http://twitter.github.com/bootstrap/"
+                      target="_blank"
+                      class="thumbnail"
+                    >
+                      <img
+                        src="bootstrap-logo-128.png"
+                        height="50"
+                        width="50"
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://jquery.com/"
+                      target="_blank"
+                      class="thumbnail"
+                    >
+                      <img
+                        src="jquery.png"
+                        height="50"
+                        alt="jQuery for animation and element control"
+                      />
+                    </a>
+                  </li>
 
-                                <small><cite title="Source Title">David Horn, 2017</cite></small>
-                            </blockquote>
-                            <ul class="thumbnails">
-                                <li><a href="http://twitter.github.com/bootstrap/" target="_blank" class="thumbnail">
-                                        <img src="bootstrap-logo-128.png" height="50" width="50" />
-                                    </a></li>
-                                <li><a href="http://jquery.com/" target="_blank" class="thumbnail">
-                                        <img src="jquery.png" height="50" alt="jQuery for animation and element control" />
-                                    </a></li>
-
-                                <li><a href="http://www.html5rocks.com/" class="thumbnail" target="_blank">
-                                        <img src="html5.png" height="50" alt="HTML5 for semantic tagging" />
-                                    </a></li>
-                                <li><a href="http://microformats.org/" class="thumbnail" target="_blank">
-                                        <img src="microformats.jpg" height="50" alt="Microformats for hCard and hResume markup" />
-                                    </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-            </footer>
-        </div>
+                  <li>
+                    <a
+                      href="http://www.html5rocks.com/"
+                      class="thumbnail"
+                      target="_blank"
+                    >
+                      <img
+                        src="html5.png"
+                        height="50"
+                        alt="HTML5 for semantic tagging"
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://microformats.org/"
+                      class="thumbnail"
+                      target="_blank"
+                    >
+                      <img
+                        src="microformats.jpg"
+                        height="50"
+                        alt="Microformats for hCard and hResume markup"
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </footer>
+      </div>
     </article>
-</body>
-
+  </body>
 </html>
