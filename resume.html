@@ -3,381 +3,220 @@
   <!-- By: David Horn -->
   <!-- about this resume -->
   <!--
-    this resume was written to take advantage of HTML5, jQuery,
-        and web-based visualization.
+    this resume was written using Tailwind CSS and optimized for PDF export.
 -->
 
   <head profile="http://microformats.org/profile/hresume">
     <!-- Look, mom! Microformats! -->
     <title>David Horn's Resume</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link
-      href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css"
-      rel="stylesheet"
-      media="screen"
-    />
-    <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
-    <style type="text/css" media="print">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "resume-green": "#46a546",
+              "resume-orange": "#f89406",
+              "resume-blue": "#62cffc",
+              "resume-gray": "#bfbfbf",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/css">
       body {
-        width: 1000px;
         font-family: apple-system, BlinkMacSystemFont, "Segoe UI Historic",
           "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
           "Segoe UI Emoji", "Segoe UI Symbol" !important;
       }
 
-      .do-not-print {
-        visibility: hidden;
-        display: none;
-      }
-
-      section {
-        /* page-break-inside: avoid; */
-        padding-top: 20px;
-      }
-
-      .contiguous {
-        page-break-inside: avoid;
-      }
-
-      section.experience {
-        page-break-inside: avoid;
-      }
-
-      .label {
-        color: #bfbfbf;
-        text-shadow: none;
-        background-color: none;
-      }
-
-      .label-success {
-        color: #46a546;
-        background-color: none;
-      }
-
-      .label-warning {
-        color: #f89406;
-        text-shadow: none;
-        background-color: none;
-      }
-
-      .label-info {
-        color: #62cffc;
-        background-color: none;
-      }
-    </style>
-    <style type="text/css" media="screen">
-      .dhorn.affix {
-        background-color: #f5f5f5;
-        top: 40px;
-        width: 100%;
-        margin: 0px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 0px 0px;
-      }
-
-      body {
-        background-color: #f5f5f5;
-        color: #303030;
-      }
-
-      .longurl {
-        overflow-x: hidden;
-      }
-
-      .print-only {
-        display: none;
-        visibility: hidden;
-      }
-
-      body {
-        padding-top: 60px !important;
-        font-family: apple-system, BlinkMacSystemFont, "Segoe UI Historic",
-          "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-          "Segoe UI Emoji", "Segoe UI Symbol" !important;
-      }
-
-      @media (max-width: 979px) {
-        .dhorn.affix {
-          top: 0px;
-        }
-
+      @media print {
         body {
-          padding-top: 0px !important;
+          background-color: white !important;
         }
+
+        .print-break-avoid {
+          page-break-inside: avoid;
+        }
+
+        .print-break-before {
+          page-break-before: always;
+        }
+      }
+
+      @page {
+        margin: 0.5in;
+        size: letter;
       }
     </style>
   </head>
 
-  <body data-spy="scroll" data-target=".navbar">
-    <div class="navbar-fixed-top navbar do-not-print navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <ul class="nav pull-left">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                >Summary <b class="caret"></b
-              ></a>
-              <ul class="dropdown-menu">
-                <li><a href="#contact-details">Contact</a></li>
-                <li><a href="#summary">Summary</a></li>
-                <li><a href="#topics">Topics I'm Exploring</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav pull-left">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                >Experience <b class="caret"></b
-              ></a>
-              <ul class="dropdown-menu">
-                <!-- <li><a href="#communities">Communities</a></li> -->
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Work Experience</a></li>
-                <li><a href="#education">Education</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav pull-left">
-            <li><a href="#about">About This Resume</a></li>
-          </ul>
-          <ul class="nav pull-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                >Actions <b class="caret"></b
-              ></a>
-              <ul class="dropdown-menu">
-                <li><a href="David-Horn-resume.pdf">Download .pdf</a></li>
-                <li>
-                  <a href="#" onclick="window.print()">Print this resume</a>
-                </li>
-                <li>
-                  <a href="https://github.com/Madrox/Resume" target="_blank"
-                    >View code on GitHub</a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <header id="contact-details">
-      <div class="container vcard">
-        <div class="page-header dhorn" data-spy="affix" data-offset-top="40">
-          <h1>
+  <body class="bg-white text-gray-800 max-w-4xl mx-auto px-8 py-6">
+    <header id="contact-details" class="mb-4">
+      <div class="vcard">
+        <div class="mb-1">
+          <h1 class="text-4xl font-bold text-gray-900 mb-2">
             <span class="fn">David Horn</span>
-            <small>Experience AI products leader</small>
+            <small class="text-gray-600 text-lg font-normal"
+              >CTO | VP Engineering | Applied AI Executive</small
+            >
           </h1>
         </div>
-        <div class="contact row vcard">
-          <div class="span3">
-            <address class="adr">
-              <span class="street-address">2911 Pacific Ave</span><br /><span
-                class="locality"
-                >Manhattan Beach</span
-              >,
-              <abbr class="region" title="California">CA</abbr>
-              <span class="postal-code">90266</span>
+        <div class="flex flex-row gap-6 vcard justify-between border-b-4">
+          <div>
+            <address class="adr not-italic">
+              <div>
+                <span class="locality">Seattle</span>,
+                <abbr class="region" title="California">WA</abbr>
+              </div>
             </address>
           </div>
-          <div class="span4">
-            <address class="">
-              <abbr title="web site">web:</abbr>
-              <a href="https://horn.gg" target="_blank" class="url"
-                >https://horn.gg</a
-              >
-              <br />
-              <span class="tel">
-                <abbr title="cell phone" class="type">cell:</abbr>
-                <span type="value">858</span>.<span type="value">775</span
-                >.<span type="value">3298</span>
-              </span>
-              <br />
-              <abbr title="email">mail:</abbr>
-              <a href="mailto:david@horn.gg" class="email">david@horn.gg</a>
-            </address>
+
+          <div class="mb-1">
+            <a
+              href="https://horn.gg"
+              target="_blank"
+              class="url text-blue-600 hover:text-blue-800"
+            >
+              https://horn.gg
+            </a>
           </div>
-          <div class="span5">
-            <ul class="thumbnails do-not-print">
-              <li>
-                <a
-                  target="_blank"
-                  href="https://x.com/madrox"
-                  class="thumbnail"
-                  ><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i
-                ></a>
-              </li>
-              <li>
-                <a
-                  target="_blank"
-                  href="https://linkedin.com/in/davidhorn"
-                  class="thumbnail"
-                  ><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i
-                ></a>
-              </li>
-            </ul>
-            <ul class="print-only" style="list-style-type: none">
-              <li><a>https://x.com/madrox</a></li>
-              <li><a>https://github.com/madrox</a></li>
-              <li><a>https://linkedin.com/in/davidhorn</a></li>
-            </ul>
+          <div>
+            <a
+              href="mailto:david@horn.gg"
+              class="email text-blue-600 hover:text-blue-800"
+            >
+              david@horn.gg
+            </a>
+          </div>
+
+          <div class="text-gray-600">
+            <div class="mb-1 tel">
+              <span>858.775.3298</span>
+            </div>
           </div>
         </div>
       </div>
     </header>
 
     <article>
-      <div class="container">
-        <section id="summary">
-          <div class="row">
-            <div class="span16 columns">
-              <p class="summary lead">
-                I am a hands on technology leader with 22 years of experience
-                designing and building products on the
-                web, desktop, and mobile. I've worked on streaming media,
-                esports, and fintech from pre-seed to Fortune 500. Now I'm looking for a company where I can
-                shape the future of AI products.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section id="topics">
-          <div class="pager-header">
-            <h2>Side projects I'm exploring</h2>
-          </div>
-          <div class="row">
-            <div class="span16 columns">
-              <blockquote>
-                <p>NPC conversation engine using LLMs that isn't a gimmick</p>
-                <p>Procedural generation of solar systems and exoplanets</p>
-                <p>Qualitative statistics in video games</p>
-              </blockquote>
-            </div>
-          </div>
-        </section>
-        <!-- <section id="communities">
-                <div class="pager-header">
-                    <h2>Communities I'm involved in</h2>
-                </div>
-                <div class="row">
-                    <div class="span4 affiliation vcard">
-                        <h4 class="fn org">Disney Data &amp; Analytics Conference</h4>
-                        <p>Speaker and attendee on topics such as social media analysis.</p>
-                    </div>
-                    <div class="span4 affiliation vcard">
-                        <h4 class="fn org">Disney Tech Days</h4>
-                        <p>Yearly speaker on best practices on personalization, direct to consumer media, and PaaS.</p>
-                    </div>
-                    <div class="span4 affiliation vcard">
-                        <h4 class="fn org">Quantified Self</h4>
-                        <p>I'm involved in trying to solve and evangelize problems around personal tracking from data entry
-                            to analysis. This resulted in a <a href="http://www.washingtonpost.com/wp-dyn/content/article/2008/09/08/AR2008090802681.html"
-                                target="_blank">Washington Post interview</a>.</p>
-                    </div>
-                </div>
-            </section> -->
-        <section id="skills">
-          <div class="pager-header">
-            <h2>What my teams and I have used lately to solve problems</h2>
-          </div>
-          <div class="row">
-            <div class="span4">
-              <h4 style="color: #46a546">Technology</h4>
-              <blockquote>
-                <ul class="unstyled">
-                  <li class="skill" rel="tag">Python</li>
-                  <li class="skill" rel="tag">Kotlin</li>
-                  <li class="skill" rel="tag">
-                    LLMs (ChatGPT, LLaMa, Anthropic)
-                  </li>
-                  <li class="skill" rel="tag">
-                    Typescript + React + React Native
-                  </li>
-                  <li class="skill" rel="tag">Postgres</li>
-                  <li class="skill" rel="tag">DynamoDB</li>
-                  <li class="skill" rel="tag">Cloud Spanner</li>
-                  <li class="skill" rel="tag">Redis</li>
-                </ul>
-              </blockquote>
-            </div>
-            <div class="span4">
-              <h4 style="color: #f89406">Frameworks &amp; Platforms</h4>
-              <blockquote>
-                <ul class="unstyled">
-                  <li class="skill" rel="tag">Django</li>
-                  <li class="skill" rel="tag">LangChain</li>
-                  <li class="skill" rel="tag">Sagemaker</li>
-                  <li class="skill" rel="tag">Databricks</li>
-                  <li class="skill" rel="tag">
-                    Donut: Document Understanding Transformer
-                  </li>
-                  <li class="skill" rel="tag">Next.js</li>
-                  <li class="skill" rel="tag">Electron</li>
-                  <li class="skill" rel="tag">Tesseract</li>
-                </ul>
-              </blockquote>
-            </div>
-            <div class="span4">
-              <h4 style="color: #62cffc">Tools</h4>
-              <blockquote>
-                <ul class="unstyled">
-                  <li class="skill" rel="tag">Hex</li>
-                  <li class="skill" rel="tag">Snowflake</li>
-                  <li class="skill" rel="tag">Retool</li>
-                  <li class="skill" rel="tag">Braintrust</li>
-                  <li class="skill" rel="tag">Figma</li>
-                  <li class="skill" rel="tag">OBS</li>
-                  <li class="skill" rel="tag">FFmpeg</li>
-                </ul>
-              </blockquote>
-            </div>
-          </div>
-        </section>
+      <section id="summary" class="mb-4">
+        <div>
+          <!-- <p class="text-lg leading-relaxed text-gray-700 summary mb-6">
+            I am a hands on technology leader with 22 years of experience
+            designing and building products on the web, desktop, and mobile.
+            I've worked on streaming media, esports, and fintech from pre-seed
+            to Fortune 500. Now I'm looking for a company where I can shape the
+            future of AI products.
+          </p> -->
+          <ul class="text-gray-700 space-y-3 list-disc list-outside ml-4">
+            <li>
+              <strong
+                >AI and product engineering executive with 22 years of full
+                stack experience building zero-to-one products</strong
+              >
+              delivering category‑defining platforms in fintech, streaming
+              media, and esports, including DisneyLife (precursor to Disney+),
+              Twitch Creator Dashboard, and the Brex AI automation suite.
+            </li>
+            <li>
+              <strong>Scale and P&L leadership</strong>: built engineering
+              organizations from 3 to 50+ people across multiple cities and
+              countries, guided $1M-$10M cloud and ML budgets, and steered
+              roadmaps that balance innovation with compliance and reliability.
+            </li>
+            <li>
+              <strong>Applied AI business impact</strong>: grew automated
+              receipt acquisition at Brex from 0 to 40 percent of expenses,
+              lifted receipt‑matching accuracy from 65 to 80 percent, and
+              launched AI-powered spend management platform that drove
+              compliance rate of customers to 94+%.
+            </li>
+            <li>
+              <strong>Thought leader and inventor</strong>: two granted US
+              patents in content curation and AI‑driven narrative tone
+              conversion, and regular conference speaker with a career‑long
+              focus on data‑driven decision making.
+            </li>
+          </ul>
+        </div>
+      </section>
 
-        <section id="projects">
-          <div class="pager-header">
-            <h2>Some of the projects I've worked on</h2>
-          </div>
+      <!-- <section id="projects" class="mb-8">
+        <div class="mb-6">
+          <h2
+            class="text-2xl font-bold text-gray-900 border-b-2 border-gray-200 pb-2"
+          >
+            Some of the projects I've worked on
+          </h2>
+        </div>
 
-          <div class="row contiguous">
-            <div class="span3">
-              <h3>Brex AI</h3>
-              <p>
-                <a href="https://brex.ai" target="_blank"> https://brex.ai </a>
+        <div class="mb-8 print-break-avoid">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Brex AI</h3>
+              <p class="text-sm">
+                <a
+                  href="https://brex.ai"
+                  target="_blank"
+                  class="text-blue-600 hover:text-blue-800"
+                >
+                  https://brex.ai
+                </a>
               </p>
             </div>
-            <div class="span9">
-              <h4>AI automation for expenses</h4>
-              <p>
-                <span class="label label-success">Python</span>
-                <span class="label label-success">Kotlin</span>
-                <span class="label label-success">Typescript + React</span>
-                <span class="label label-success">ChatGPT</span>
-                <span class="label label-warning">LangChain</span>
-                <span class="label label-warning">Sagemaker</span>
-                <span class="label label-warning">Databricks</span>
-                <span class="label label-warning">Postgres</span>
-              </p>
-              <p>
+            <div class="col-span-3">
+              <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                AI automation for expenses
+              </h4>
+              <div class="mb-3 flex flex-wrap gap-1">
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >Python</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >Kotlin</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >Typescript + React</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >ChatGPT</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >LangChain</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >Sagemaker</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >Databricks</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >Postgres</span
+                >
+              </div>
+              <p class="text-sm leading-relaxed mb-2">
                 Brex AI is the name of the suite of AI-powered features in
                 Brex's expense product. It includes automated receipt
                 acquisition, budget autoselection, generative compliance
                 documentation, and policy enforcement. There is also a search
                 experience, which started as a chatbot.
               </p>
-              <p>
+              <p class="text-sm leading-relaxed">
                 The UI is powered by Typescript and React. LLM prompts power
                 many of these features with data embedded from multiple sources,
                 including L2/L3 transaction data and the user's email and
@@ -387,38 +226,76 @@
               </p>
             </div>
           </div>
+        </div>
 
-          <div class="row contiguous">
-            <div class="span3">
-              <h3>Trophy</h3>
-              <p>
-                <a href="https://trophy.gg" target="_blank">
+        <div class="mb-8 print-break-avoid">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Trophy</h3>
+              <p class="text-sm">
+                <a
+                  href="https://trophy.gg"
+                  target="_blank"
+                  class="text-blue-600 hover:text-blue-800"
+                >
                   https://trophy.gg
                 </a>
               </p>
             </div>
-            <div class="span9">
-              <h4>Esports social media</h4>
-              <p>
-                <span class="label label-success">Python</span>
-                <span class="label label-success">R</span>
-                <span class="label label-success">Typescript + React</span>
-                <span class="label label-warning">Django</span>
-                <span class="label label-warning">Firebase</span>
-                <span class="label label-warning">ffmpeg</span>
-                <span class="label label-warning">Tesseract OCR</span>
-                <span class="label label-warning">Google App Engine</span>
-                <span class="label label-warning">Google Datastore</span>
-                <span class="label label-warning">MySQL</span>
-              </p>
-              <p>
+            <div class="col-span-3">
+              <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                Esports social media
+              </h4>
+              <div class="mb-3 flex flex-wrap gap-1">
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >Python</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >R</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >Typescript + React</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >Django</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >Firebase</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >ffmpeg</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >Tesseract OCR</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >Google App Engine</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >Google Datastore</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >MySQL</span
+                >
+              </div>
+              <p class="text-sm leading-relaxed mb-2">
                 Trophy is a social media network for sharing your gameplay
                 achievements, including clips and stats. A desktop app records
                 gameplay, analyzing it for clips and stats that the player can
                 see when they've finished their gaming session and share with
                 friends.
               </p>
-              <p>
+              <p class="text-sm leading-relaxed">
                 The web site is served on Firebase with React, which is powered
                 by a REST API written in Django and hosted in Google App Engine.
                 The desktop app is built with Electron and React with support
@@ -427,31 +304,50 @@
               </p>
             </div>
           </div>
+        </div>
 
-          <div class="row contiguous">
-            <div class="span3">
-              <h3>Creator Dashboard</h3>
-              <p>
-                <a href="https://dashboard.twitch.tv" target="_blank">
+        <div class="mb-8 print-break-avoid">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">
+                Creator Dashboard
+              </h3>
+              <p class="text-sm">
+                <a
+                  href="https://dashboard.twitch.tv"
+                  target="_blank"
+                  class="text-blue-600 hover:text-blue-800"
+                >
                   https://dashboard.twitch.tv
                 </a>
               </p>
             </div>
-            <div class="span9">
-              <h4>The creator site for Twitch</h4>
-              <p>
-                <span class="label label-success">Go</span>
-                <span class="label label-success">Typescript + React</span>
-                <span class="label label-warning">AWS</span>
-              </p>
-              <p>
+            <div class="col-span-3">
+              <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                The creator site for Twitch
+              </h4>
+              <div class="mb-3 flex flex-wrap gap-1">
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >Go</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >Typescript + React</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >AWS</span
+                >
+              </div>
+              <p class="text-sm leading-relaxed mb-2">
                 The Creator Dashboard is Twitch's portal for people who stream
                 on their platform. Before this existed, creators used mostly
                 third party tools that used Twitch's APIs while live. It was
                 completed in 8 months, and launched in beta during the keynote
                 at TwitchCon.
               </p>
-              <p>
+              <p class="text-sm leading-relaxed">
                 I was DRI for the project from its inception, owning
                 engineering, project management, and stakeholder communication.
                 I also delivered several features when time allowed, including
@@ -459,31 +355,69 @@
               </p>
             </div>
           </div>
+        </div>
 
-          <div class="row contiguous">
-            <div class="span3">
-              <h3>DisneyLife</h3>
-              <p>
-                <a href="https://disneyplus.com" class="longurl" target="_blank"
-                  >https://disneyplus.com</a
+        <div class="mb-8 print-break-avoid">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">DisneyLife</h3>
+              <p class="text-sm">
+                <a
+                  href="https://disneyplus.com"
+                  target="_blank"
+                  class="text-blue-600 hover:text-blue-800"
                 >
+                  https://disneyplus.com
+                </a>
               </p>
             </div>
-            <div class="span9">
-              <h4>The Disney+ test market product</h4>
-              <p>
-                <span class="label label-success">Python</span>
-                <span class="label label-success">Objective-C</span>
-                <span class="label label-success">Java for Android</span>
-                <span class="label label-success">HTML5/Javascript</span>
-                <span class="label label-warning">Django</span>
-                <span class="label label-warning">MySQL</span>
-                <span class="label label-warning">Google App Engine</span>
-                <span class="label label-warning">Google Datastore</span>
-                <span class="label label-info">Jenkins</span>
-                <span class="label label-info">Apteligent</span>
-              </p>
-              <p>
+            <div class="col-span-3">
+              <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                The Disney+ test market product
+              </h4>
+              <div class="mb-3 flex flex-wrap gap-1">
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >Python</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >Objective-C</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >Java for Android</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-green-100 text-resume-green"
+                  >HTML5/Javascript</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >Django</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >MySQL</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >Google App Engine</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-orange-100 text-resume-orange"
+                  >Google Datastore</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-blue-100 text-resume-blue"
+                  >Jenkins</span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded bg-blue-100 text-resume-blue"
+                  >Apteligent</span
+                >
+              </div>
+              <p class="text-sm leading-relaxed mb-2">
                 DisneyLife was the test market product released before Disney+,
                 Disney's SVOD service. In addition to SVOD, it offered access to
                 Disney music, books, and live streams of Disney TV channels. It
@@ -491,7 +425,7 @@
                 Fire TV, and Chromecast. It was available in the UK, Ireland,
                 and Philippines prior to the launch of Disney+ in those markets.
               </p>
-              <p>
+              <p class="text-sm leading-relaxed">
                 I was the technology leader for the product since its inception
                 in 2013 until my departure. The team started with 8 engineers
                 and ended at 38. I also served as the product leader for a/b
@@ -499,440 +433,264 @@
               </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section> -->
 
-        <section id="experience" class="vcalendar">
-          <div class="pager-header">
-            <h2>Companies I've worked for</h2>
-          </div>
+      <section id="experience" class="vcalendar mb-4">
+        <div class="mb-2">
+          <h2
+            class="text-2xl font-bold text-gray-900 border-b-2 border-gray-200 pb-2"
+          >
+            Leadership Experience
+          </h2>
+        </div>
 
-          <div class="row experience vevent contiguous">
-            <div class="span12">
-              <h3 class="location org">Brex</h3>
-              <div class="row">
-                <div class="span4">
-                  <div class="row">
-                    <div class="span4">
-                      <em class="title">Head of AI</em>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="span4">
-                      <em><abbr class="dtstart">Jun 2022</abbr> - present</em>
-                    </div>
-                  </div>
-                </div>
-                <div class="span8">
-                  <p>
-                    I am the engineering leader for Brex's automation efforts,
-                    touching on expense compliance, accounting, and spend. This
-                    team has worked on receipt content extraction and expense
-                    matching, expense memo autogeneration, accounting rule
-                    generation, and chat/search to name a few product
-                    experiences. In addition to product experiences and the
-                    related models, I look after the company's machine learning
-                    platform which supports Brex's risk models in addition to
-                    product models.
-                  </p>
-                  <p>
-                    As the engineering leader, I have owned the team's roadmap
-                    and, with recent advancements in LLMs, have been responsible
-                    for directing product features and how they can best
-                    leverage prompt engineering. In this capacity, I grew
-                    automated receipt acquisition from 0 to 40% of expenses,
-                    memo generation rates to 30%, and improved receipt matching
-                    rates from 65% to 80%, which were the team's original OKRs.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row experience vevent contiguous">
-            <div class="span12">
-              <h3 class="location org">Trophy Interactive</h3>
-              <div class="row">
-                <div class="span4">
-                  <div class="row">
-                    <div class="span4">
-                      <em class="title">Cofounder and CEO</em>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="span4">
-                      <em
-                        ><abbr class="dtstart">Apr 2020</abbr> -
-                        <abbr class="dtend">Jul 2021</abbr></em
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="span8">
-                  <p>
-                    During quarantine, I chose to cofound a startup focused on
-                    making it easier to become a fan of esports. I served as
-                    CEO, head of product, and full stack engineer. During this
-                    time, we built a web and desktop product that went through
-                    four major iterations, applying lean startup methodologies
-                    before arriving at its final concept.
-                  </p>
-                  <p>
-                    While the project showed promise with 20 active users, it
-                    ended from lack of funds.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row experience vevent contiguous">
-            <div class="span12">
-              <h3 class="location org">Amazon <small>Twitch</small></h3>
-              <div class="row">
-                <div class="span4">
-                  <div class="row">
-                    <div class="span4">
-                      <em class="title">Senior Manager, Engineering</em>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="span4">
-                      <em
-                        ><abbr class="dtstart">Feb 2019</abbr> -
-                        <abbr class="dtend">Apr 2020</abbr></em
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="span8">
-                  <p>
-                    The Creator Business team was responsible for building and
-                    maintaining the tools and services streamers used while live
-                    on Twitch. I was responsible for engineering, technical
-                    product, and project management of this team.
-                  </p>
-                  <p>
-                    During my tenure, the team was responsible for 13 services
-                    in live operations, and launched a high profile project for
-                    Twitch, the creator dashboard, on time for TwitchCon within
-                    eight months of its greenlighting.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row experience vevent contiguous">
-            <div class="span12">
-              <h3 class="location org">Disney <small>DCPI</small></h3>
-              <div class="row">
-                <div class="span4">
-                  <div class="row">
-                    <div class="span4">
-                      <em class="title">Director, Engineering</em>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="span4">
-                      <em
-                        ><abbr class="dtstart">Aug 2010</abbr> -
-                        <abbr class="dtend">Jan 2019</abbr></em
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="span8">
-                  <p>
-                    I was the technology leader for Disney Interactive Labs,
-                    reporting directly to the single thread leader of Labs. I
-                    was responsible for all engineering of new business
-                    incubation at Disney Interactive. In this position, I led
-                    the team that launched Mickey Video and DisneyLife. In early
-                    2017, I expanded into leadership for the entire portfolio of
-                    media apps at DCPI, including Star Wars, Disney LOL, Disney
-                    GIF, and Disney Story Central.
-                  </p>
-                  <p>
-                    I built this engineering organization from scratch,
-                    beginning with 3 engineers in Los Angeles. On my departure,
-                    I managed a team of 46 in four cities, participated in the
-                    patent committee, and sat on the technology steering
-                    committee at DCPI. I was also a regular invited speaker on
-                    various technology and engineering leadership topics,
-                    representing Disney at conferences.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row experience vevent contiguous">
-            <div class="span12">
-              <h3 class="location org">
-                Yahoo! <small>Membership Platform Team</small>
+        <div class="mb-6 experience vevent print-break-avoid">
+          <div class="grid grid-cols-4 gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 location org mb-2">
+                Brex
               </h3>
-              <div class="row">
-                <div class="span4">
-                  <div class="row">
-                    <div class="span4">
-                      <em class="title">Technical Intern</em>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="span4">
-                      <em
-                        ><abbr class="dtstart">Jun 2008</abbr> -
-                        <abbr class="dtend">Sep 2008</abbr></em
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="span8">
-                  <p>
-                    In the middle of my statistics degree I spent the summer of
-                    2008 interning for Yahoo's membership team. At the time,
-                    Yahoo! was embracing open standards such as OpenID and
-                    OAuth, which I helped execute.
-                  </p>
-                </div>
+              <div class="text-sm text-gray-600">
+                <p class="title font-semibold">Head of AI</p>
+                <p class="mt-1">
+                  <abbr class="dtstart">Jun 2022</abbr> - present
+                </p>
               </div>
             </div>
+            <div class="col-span-3">
+              <ul
+                class="text-sm leading-relaxed space-y-1 list-disc list-outside"
+              >
+                <li>
+                  Scope: Leading 20-person AI/ML org; owned ~$5M cloud/ML
+                  budget; platform supporting AI product features and $10B+ risk
+                  models; DRI for org-wide AI enablement.
+                </li>
+                <li>
+                  Product: Grew AI memos to ~30% of expenses, scaled
+                  auto-receipts from 0 to 40% and improved matching 65 to 80%.
+                  This cut manual data entry by 300+ hours/month (avg mid-size
+                  org).
+                </li>
+                <li>
+                  Operations: Launched AI CX platform with over 50% containment
+                  and refactored back-office workflows delivering ~10× cost
+                  reduction.
+                </li>
+                <li>
+                  AI Engineering: Drove AI tool adoption and training across all
+                  functions; updated engineering interview loops to include AI
+                  coding challenges; led AI-driven codebase rewrite project,
+                  migrating from Kotlin to TypeScript, increasing AI codegen
+                  rate to over 80%.
+                </li>
+              </ul>
+            </div>
           </div>
+        </div>
 
-          <div class="row experience vevent contiguous">
-            <div class="span12">
-              <h3 class="location org">
-                Websense <small>Enterprise Applications Group</small>
+        <div class="mb-6 experience vevent print-break-avoid">
+          <div class="grid grid-cols-4 gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 location org mb-2">
+                Trophy Interactive
               </h3>
-              <div class="row">
-                <div class="span4">
-                  <div class="row">
-                    <div class="span4">
-                      <em class="title">Programmer/Analyst</em>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="span4">
-                      <em
-                        ><abbr class="dtstart">Jun 2002</abbr> -
-                        <abbr class="dtend">Jul 2005</abbr></em
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="span8">
-                  <p>
-                    Focusing on internal tools, I built several applications to
-                    increase efficiency throughout the company. Mainly servicing
-                    the technical services department, I conceived, designed,
-                    and implemented a replacement to their ticketing system:
-                    CWBI. This system emphasized usability and low maintenance.
-                    This solution was in place for five years until SaaS CRM
-                    offerings matured.
-                  </p>
-                </div>
+              <div class="text-sm text-gray-600">
+                <p class="title font-semibold">Cofounder and CEO</p>
+                <p class="mt-1">
+                  <abbr class="dtstart">Apr 2020</abbr> -
+                  <abbr class="dtend">Jul 2021</abbr>
+                </p>
               </div>
             </div>
+            <div class="col-span-3">
+              <ul
+                class="text-sm leading-relaxed space-y-1 list-disc list-outside"
+              >
+                <li>
+                  Cofounded esports social platform as CEO, head of product, and
+                  full-stack engineer, building a cross-platform desktop app
+                  with real-time gameplay capture and analysis
+                </li>
+                <li>
+                  Developed scalable web platform on Firebase with Django REST
+                  API, supporting gameplay clip sharing and social features
+                </li>
+                <li>
+                  Achieved product-market validation with 50+ engaged daily
+                  active users before wind-down due to funding constraints
+                </li>
+              </ul>
+            </div>
           </div>
-        </section>
+        </div>
 
-        <section id="patents" class="vcalendar">
-          <div class="pager-header">
-            <h2>Patents</h2>
-          </div>
-          <div class="row contiguous patent vevent">
-            <div class="span12">
-              <h4>
-                Content Promotion Through Automated Curation of Content Clips
-              </h4>
-              <div class="row">
-                <div class="span4">
-                  <p>
-                    US Patent
-                    <a
-                      href="https://patents.justia.com/patent/20200288185"
-                      class="longurl"
-                      target="_blank"
-                      >10911803</a
-                    >
-                  </p>
-                </div>
-
-                <div class="span4">
-                  <p>Issued <abbr class="dtstart dtend">Apr 16, 2020</abbr></p>
-                </div>
-
-                <div class="span4">
-                  <p>Inventors: David Horn, Michael McNabb, Jason G. Fong</p>
-                </div>
+        <div class="mb-6 experience vevent print-break-avoid">
+          <div class="grid grid-cols-4 gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 location org mb-2">
+                Amazon <span class="text-base font-normal">Twitch</span>
+              </h3>
+              <div class="text-sm text-gray-600">
+                <p class="title font-semibold">Senior Manager, Engineering</p>
+                <p class="mt-1">
+                  <abbr class="dtstart">Feb 2019</abbr> -
+                  <abbr class="dtend">Apr 2020</abbr>
+                </p>
               </div>
             </div>
-          </div>
-
-          <div class="row contiguous patent vevent">
-            <div class="span12">
-              <h4>Automated Conversion of Vocabulary and Narrative Tone</h4>
-              <div class="row">
-                <div class="span4">
-                  <p>
-                    US Patent
-                    <a
-                      href="https://patents.justia.com/patent/20200110807"
-                      class="longurl"
-                      target="_blank"
-                      >10810382</a
-                    >
-                  </p>
-                </div>
-
-                <div class="span4">
-                  <p>Issued <abbr class="dtstart dtend">Oct 20, 2020</abbr></p>
-                </div>
-
-                <div class="span4">
-                  <p>Inventor: David Horn</p>
-                </div>
-              </div>
+            <div class="col-span-3">
+              <ul
+                class="text-sm leading-relaxed space-y-1 list-disc list-outside"
+              >
+                <li>
+                  Managed engineering, technical product, and project execution
+                  for Creator Business vertical serving Twitch's top revenue
+                  generators, managing 13 critical live services supporting
+                  millions of Twitch streamers globally with 99.9%+ uptime
+                </li>
+                <li>
+                  Delivered Twitch Creator Dashboard from concept to TwitchCon
+                  keynote launch in 8 months, becoming primary creator
+                  management platform
+                </li>
+              </ul>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section id="education" class="vcalendar">
-          <div class="pager-header">
-            <h2>Education</h2>
-          </div>
-          <div class="row education vevent">
-            <div class="span6">
-              <h4>
-                <span class="summary">California Polytechnic University</span>
-                <small>B.S. in Statistics</small>
-              </h4>
-              <div class="row">
-                <div class="span7">
-                  <em
-                    ><abbr class="dtend" title="2010-06-01"
-                      >Class of 2010</abbr
-                    ></em
-                  >
-                </div>
+        <div class="experience vevent print-break-avoid">
+          <div class="grid grid-cols-4 gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 location org mb-2">
+                Disney <span class="text-base font-normal">DCPI</span>
+              </h3>
+              <div class="text-sm text-gray-600">
+                <p class="title font-semibold">Director, Engineering</p>
+                <p class="mt-1">
+                  <abbr class="dtstart">Aug 2010</abbr> -
+                  <abbr class="dtend">Jan 2019</abbr>
+                </p>
               </div>
             </div>
-            <div class="span6">
-              <div class="row">
-                <div class="span2">
-                  <h5>Favorite Topics</h5>
-                  <blockquote>
-                    <ul class="unstyled">
-                      <li>SAS</li>
-                      <li>Graph Theory</li>
-                      <li>Visualization</li>
-                    </ul>
-                  </blockquote>
-                </div>
-                <div class="span4">
-                  <h5>Research Project</h5>
-                  <p>
-                    I explored various projects and methods of applying
-                    statistical methods on social media datasets. My senior
-                    thesis described how to approximate PageRank using imperfect
-                    knowledge of the graph.
-                  </p>
-                </div>
-              </div>
+            <div class="col-span-3">
+              <ul
+                class="text-sm leading-relaxed space-y-1 list-disc list-outside"
+              >
+                <li>
+                  Built engineering organization from 3 to 46 engineers across 4
+                  cities with median retention of five years; established
+                  Disney's streaming media and mobile app capabilities; expanded
+                  consumer products and interactive media app portfolio to over
+                  10 apps
+                </li>
+                <li>
+                  Led engineering for launch of Disney's first cloud streaming
+                  service, DisneyLife (precursor to Disney+), in test markets,
+                  serving millions across UK, France, Italy, Ireland, and
+                  Philippines with multi-platform SVOD experience. Executed as
+                  Disney's first cloud service.
+                </li>
+              </ul>
             </div>
           </div>
-        </section>
-        <footer>
-          <section id="about" class="do-not-print">
-            <div class="pager-header">
-              <h2>About this resume</h2>
-            </div>
-            <div class="row">
-              <div class="span12">
-                <blockquote>
-                  <p>
-                    This resume was written using
-                    <a
-                      href="http://twitter.github.com/bootstrap/"
-                      target="_blank"
-                      >Twitter Bootstrap
-                    </a>
-                    for layout and typography,
-                    <a href="http://jquery.com/" target="_blank">jQuery</a> for
-                    manipulating the DOM, and
-                    <a href="http://microformats.org/" target="_blank"
-                      >Microformat's hCard and hResume specs</a
-                    >
-                    to allow microformat-supported tools to extract the relevant
-                    information from the document. If I missed any interesting
-                    technologies that could be useful in a document of this
-                    type, drop me a line.
-                  </p>
+        </div>
+      </section>
 
-                  <small
-                    ><cite title="Source Title">David Horn, 2017</cite></small
-                  >
-                </blockquote>
-                <ul class="thumbnails">
-                  <li>
-                    <a
-                      href="http://twitter.github.com/bootstrap/"
-                      target="_blank"
-                      class="thumbnail"
-                    >
-                      <img
-                        src="bootstrap-logo-128.png"
-                        height="50"
-                        width="50"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="http://jquery.com/"
-                      target="_blank"
-                      class="thumbnail"
-                    >
-                      <img
-                        src="jquery.png"
-                        height="50"
-                        alt="jQuery for animation and element control"
-                      />
-                    </a>
-                  </li>
+      <section id="patents" class="vcalendar mb-4">
+        <div class="mb-2">
+          <h2
+            class="text-xl font-bold text-gray-900 border-b-2 border-gray-200 pb-2"
+          >
+            Patents
+          </h2>
+        </div>
 
-                  <li>
-                    <a
-                      href="http://www.html5rocks.com/"
-                      class="thumbnail"
-                      target="_blank"
-                    >
-                      <img
-                        src="html5.png"
-                        height="50"
-                        alt="HTML5 for semantic tagging"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="http://microformats.org/"
-                      class="thumbnail"
-                      target="_blank"
-                    >
-                      <img
-                        src="microformats.jpg"
-                        height="50"
-                        alt="Microformats for hCard and hResume markup"
-                      />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-        </footer>
-      </div>
+        <div class="text-sm space-y-2">
+          <div>
+            <strong
+              >Content Promotion Through Automated Curation of Content
+              Clips</strong
+            >
+            - US Patent
+            <a
+              href="https://patents.justia.com/patent/20200288185"
+              target="_blank"
+              class="text-blue-600 hover:text-blue-800"
+              >10911803</a
+            >
+            (Apr 16, 2020)
+          </div>
+          <div>
+            <strong
+              >Automated Conversion of Vocabulary and Narrative Tone</strong
+            >
+            - US Patent
+            <a
+              href="https://patents.justia.com/patent/20200110807"
+              target="_blank"
+              class="text-blue-600 hover:text-blue-800"
+              >10810382</a
+            >
+            (Oct 20, 2020)
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="vcalendar mb-4">
+        <div class="mb-2">
+          <h2
+            class="text-xl font-bold text-gray-900 border-b-2 border-gray-200 pb-2"
+          >
+            Education
+          </h2>
+        </div>
+        <div class="text-sm">
+          <div>
+            <strong
+              >California Polytechnic State University, San Luis Obispo</strong
+            >
+            - B.S. in Statistics (2010) -
+            <span class="text-gray-600">
+              Thesis: PageRank approximation with imperfect graph
+              knowledge</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="mb-2">
+          <h2
+            class="text-xl font-bold text-gray-900 border-b-2 border-gray-200 pb-2"
+          >
+            Technical Experience
+          </h2>
+        </div>
+        <div class="text-sm space-y-2">
+          <div>
+            <span class="font-semibold">Cloud & Data:</span> AWS, GCP,
+            Snowflake, Databricks, DynamoDB, Spanner, PostgreSQL
+          </div>
+          <div>
+            <span class="font-semibold">AI/ML:</span> OpenAI, Anthropic, Llama,
+            SageMaker, LangChain, Vector DBs, Braintrust
+          </div>
+          <div>
+            <span class="font-semibold">Backend:</span> Python, Go, Kotlin,
+            Django, FastAPI, NestJS, Typescript
+          </div>
+          <div>
+            <span class="font-semibold">Frontend & Desktop:</span> React /
+            Next.js, React Native, Electron, TypeScript
+          </div>
+          <div>
+            <span class="font-semibold">DevOps & Observability:</span>
+            Terraform, Hex, Datadog, Retool, Jenkins, Docker, Kubernetes
+          </div>
+        </div>
+      </section>
     </article>
   </body>
 </html>
