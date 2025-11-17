@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- By: David Horn -->
+  <!-- about this resume -->
+  <!--
+    this resume was written using Tailwind CSS and optimized for PDF export.
+-->
+
+  <head profile="http://microformats.org/profile/hresume">
+    <!-- Look, mom! Microformats! -->
+    <title>David Horn's Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "resume-green": "#46a546",
+              "resume-orange": "#f89406",
+              "resume-blue": "#62cffc",
+              "resume-gray": "#bfbfbf",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/css">
+      body {
+        font-family: apple-system, BlinkMacSystemFont, "Segoe UI Historic",
+          "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol" !important;
+      }
+
+      @media print {
+        body {
+          background-color: white !important;
+        }
+
+        .print-break-avoid {
+          page-break-inside: avoid;
+        }
+
+        .print-break-before {
+          page-break-before: always;
+        }
+      }
+
+      .region {
+        text-decoration: none;
+      }
+
+      @page {
+        margin: 0.5in;
+        size: letter;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-800 max-w-4xl mx-auto px-8 py-6">
+    <header id="contact-details" class="mb-4">
+      <div class="vcard">
+        <div class="mb-1">
+          <h1 class="text-4xl font-bold text-gray-900 mb-2">
+            <span class="fn">David Horn</span>
+            <small class="text-gray-600 text-lg font-normal"
+              >Engineering Director | AI & Product Leadership</small
+            >
+          </h1>
+        </div>
+        <div class="flex flex-row gap-6 vcard justify-between border-b-4">
+          <div>
+            <address class="adr not-italic">
+              <div>
+                <span class="locality">Seattle</span>,
+                <abbr class="region" title="Washington">WA</abbr>
+              </div>
+            </address>
+          </div>
+
+          <div class="mb-1">
+            <a
+              href="https://horn.gg"
+              target="_blank"
+              class="url text-blue-600 hover:text-blue-800"
+            >
+              https://horn.gg
+            </a>
+          </div>
+          <div>
+            <a
+              href="mailto:david@horn.gg"
+              class="email text-blue-600 hover:text-blue-800"
+            >
+              david@horn.gg
+            </a>
+          </div>
+
+          <div class="text-gray-600">
+            <div class="mb-1 tel">
+              <span>858.775.3298</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <article>
+      <section id="summary" class="mb-4">
+        <div>
+          <ul class="text-gray-700 space-y-3 list-disc list-outside ml-4">
+            <li>
+              <strong
+                >Engineering leader with 22 years of experience at Fortune 500
+                and high-growth technology companies</strong
+              >
+              building enterprise-scale platforms in fintech, streaming media,
+              and esports at Disney, Amazon/Twitch, and Brex, delivering
+              category‑defining products including DisneyLife (precursor to
+              Disney+), Twitch Creator Dashboard, and the Brex AI automation
+              suite.
+            </li>
+            <li>
+              <strong>Enterprise scale and organizational leadership</strong>:
+              built and led engineering organizations from 3 to 50+ people
+              across multiple cities and countries, managed $5M+ cloud and ML
+              budgets, and delivered mission-critical platforms serving millions
+              of users globally with 99.9%+ uptime.
+            </li>
+            <li>
+              <strong>Applied AI and product innovation</strong>: grew automated
+              receipt acquisition at Brex from 0 to 40 percent of expenses,
+              lifted receipt‑matching accuracy from 65 to 80 percent, launched
+              AI-powered spend management platform driving 94%+ compliance, and
+              delivered AI CX platform with over 50% containment.
+            </li>
+            <li>
+              <strong>Technical excellence and thought leadership</strong>: two
+              granted US patents in content curation and AI‑driven narrative
+              tone conversion, regular conference speaker, and proven track
+              record of balancing innovation with compliance, reliability, and
+              data‑driven decision making.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="experience" class="vcalendar mb-4">
+        <div class="mb-2">
+          <h2
+            class="text-2xl font-bold text-gray-900 border-b-2 border-gray-200 pb-2"
+          >
+            Leadership Experience
+          </h2>
+        </div>
+
+        <div class="mb-6 experience vevent print-break-avoid">
+          <div class="grid grid-cols-4 gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 location org mb-2">
+                Brex
+              </h3>
+              <div class="text-sm text-gray-600">
+                <p class="title font-semibold">Head of AI</p>
+                <p class="mt-1">
+                  <abbr class="dtstart">Jun 2022</abbr> - present
+                </p>
+              </div>
+            </div>
+            <div class="col-span-3">
+              <ul
+                class="text-sm leading-relaxed space-y-1 list-disc list-outside"
+              >
+                <li>
+                  Scope: Leading 20-person AI/ML org; owned ~$5M cloud/ML
+                  budget; platform supporting AI product features and $10B+ risk
+                  models; DRI for org-wide AI enablement across engineering,
+                  product, and business functions.
+                </li>
+                <li>
+                  Product: Grew AI memos to ~30% of expenses, scaled
+                  auto-receipts from 0 to 40% and improved matching 65 to 80%.
+                  This cut manual data entry by 300+ hours/month (avg mid-size
+                  org). Delivered AI-powered spend management platform driving
+                  customer compliance to 94+%.
+                </li>
+                <li>
+                  Operations: Launched enterprise AI CX platform with over 50%
+                  containment and refactored back-office workflows delivering
+                  ~10× cost reduction. Platform handles thousands of customer
+                  interactions daily.
+                </li>
+                <li>
+                  AI Engineering: Drove AI tool adoption and training across all
+                  functions; updated engineering interview loops to include AI
+                  coding challenges; led AI-driven codebase modernization
+                  project, migrating from Kotlin to TypeScript, increasing AI
+                  codegen rate to over 80%.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-6 experience vevent print-break-avoid">
+          <div class="grid grid-cols-4 gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 location org mb-2">
+                Trophy
+              </h3>
+              <div class="text-sm text-gray-600">
+                <p class="title font-semibold">Cofounder and CEO</p>
+                <p class="mt-1">
+                  <abbr class="dtstart">Apr 2020</abbr> -
+                  <abbr class="dtend">Jul 2021</abbr>
+                </p>
+              </div>
+            </div>
+            <div class="col-span-3">
+              <ul
+                class="text-sm leading-relaxed space-y-1 list-disc list-outside"
+              >
+                <li>
+                  Cofounded esports social platform as CEO, head of product, and
+                  full-stack engineer, building a cross-platform desktop app
+                  with real-time gameplay capture and analysis
+                </li>
+                <li>
+                  Developed scalable web platform on Firebase with Django REST
+                  API, supporting gameplay clip sharing and social features
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-6 experience vevent print-break-avoid">
+          <div class="grid grid-cols-4 gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 location org mb-2">
+                Amazon <span class="text-base font-normal">Twitch</span>
+              </h3>
+              <div class="text-sm text-gray-600">
+                <p class="title font-semibold">Senior Manager, Engineering</p>
+                <p class="mt-1">
+                  <abbr class="dtstart">Feb 2019</abbr> -
+                  <abbr class="dtend">Apr 2020</abbr>
+                </p>
+              </div>
+            </div>
+            <div class="col-span-3">
+              <ul
+                class="text-sm leading-relaxed space-y-1 list-disc list-outside"
+              >
+                <li>
+                  Led engineering, technical product, and project execution for
+                  Creator Business vertical serving Twitch's top revenue
+                  generators, managing 13 critical live services supporting
+                  millions of Twitch streamers globally with 99.9%+ uptime.
+                </li>
+                <li>
+                  Delivered Twitch Creator Dashboard from concept to TwitchCon
+                  keynote launch in 8 months, becoming primary creator
+                  management platform used by millions of streamers. Owned
+                  engineering, project management, and cross-functional
+                  stakeholder communication across product, design, and business
+                  teams.
+                </li>
+                <li>
+                  Managed distributed engineering teams across multiple time
+                  zones, established technical roadmaps, and drove adoption of
+                  best practices for reliability and scalability in
+                  high-traffic, real-time streaming environment.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience vevent print-break-avoid">
+          <div class="grid grid-cols-4 gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 location org mb-2">
+                Disney <span class="text-base font-normal">DCPI</span>
+              </h3>
+              <div class="text-sm text-gray-600">
+                <p class="title font-semibold">Director, Engineering</p>
+                <p class="mt-1">
+                  <abbr class="dtstart">Aug 2010</abbr> -
+                  <abbr class="dtend">Jan 2019</abbr>
+                </p>
+              </div>
+            </div>
+            <div class="col-span-3">
+              <ul
+                class="text-sm leading-relaxed space-y-1 list-disc list-outside"
+              >
+                <li>
+                  Built and led engineering organization from 3 to 46 engineers
+                  across 4 cities (Seattle, Los Angeles, London, Bristol) with
+                  median retention of five years; established Disney's streaming
+                  media and mobile app capabilities; expanded consumer products
+                  and interactive media app portfolio to over 10 apps.
+                </li>
+                <li>
+                  Led engineering for launch of Disney's first cloud streaming
+                  service, DisneyLife (precursor to Disney+), in test markets,
+                  serving millions across UK, France, Italy, Ireland, and
+                  Philippines with multi-platform SVOD experience supporting
+                  web, iOS, tvOS, Android, Android TV, Kindle Fire, Fire TV, and
+                  Chromecast.
+                </li>
+                <li>
+                  Managed multi-million dollar cloud infrastructure budget,
+                  established engineering best practices, interview processes,
+                  and performance management systems. Partnered with product,
+                  legal, and business stakeholders to navigate complex licensing
+                  and compliance requirements across international markets.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="patents" class="vcalendar mb-4">
+        <div class="mb-2">
+          <h2
+            class="text-xl font-bold text-gray-900 border-b-2 border-gray-200 pb-2"
+          >
+            Patents
+          </h2>
+        </div>
+
+        <div class="text-sm space-y-2">
+          <div>
+            <strong
+              >Content Promotion Through Automated Curation of Content
+              Clips</strong
+            >
+            - US Patent
+            <a
+              href="https://patents.justia.com/patent/20200288185"
+              target="_blank"
+              class="text-blue-600 hover:text-blue-800"
+              >10911803</a
+            >
+            (Apr 16, 2020)
+          </div>
+          <div>
+            <strong
+              >Automated Conversion of Vocabulary and Narrative Tone</strong
+            >
+            - US Patent
+            <a
+              href="https://patents.justia.com/patent/20200110807"
+              target="_blank"
+              class="text-blue-600 hover:text-blue-800"
+              >10810382</a
+            >
+            (Oct 20, 2020)
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="vcalendar mb-4">
+        <div class="mb-2">
+          <h2
+            class="text-xl font-bold text-gray-900 border-b-2 border-gray-200 pb-2"
+          >
+            Education
+          </h2>
+        </div>
+        <div class="text-sm">
+          <div>
+            <strong
+              >California Polytechnic State University, San Luis Obispo</strong
+            >
+            - B.S. in Statistics (2010) -
+            <span class="text-gray-600">
+              Thesis: PageRank approximation with imperfect graph
+              knowledge</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="mb-2">
+          <h2
+            class="text-xl font-bold text-gray-900 border-b-2 border-gray-200 pb-2"
+          >
+            Technical Experience
+          </h2>
+        </div>
+        <div class="text-sm space-y-2">
+          <div>
+            <span class="font-semibold">Cloud & Data:</span> AWS, GCP,
+            Snowflake, Databricks, DynamoDB, Spanner, PostgreSQL
+          </div>
+          <div>
+            <span class="font-semibold">AI/ML:</span> OpenAI, Anthropic, Llama,
+            SageMaker, LangChain, Vector DBs, Braintrust
+          </div>
+          <div>
+            <span class="font-semibold">Backend:</span> Python, Go, Kotlin,
+            Django, FastAPI, NestJS, Typescript
+          </div>
+          <div>
+            <span class="font-semibold">Frontend & Desktop:</span> React /
+            Next.js, React Native, Electron, TypeScript
+          </div>
+          <div>
+            <span class="font-semibold">DevOps & Observability:</span>
+            Terraform, Hex, Datadog, Retool, Jenkins, Docker, Kubernetes
+          </div>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>
